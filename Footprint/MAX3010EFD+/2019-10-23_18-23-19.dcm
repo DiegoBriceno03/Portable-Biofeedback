@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX30101EFD+
+D High-Sensitivity Pulse Oximeter and Heart-Rate Sensor for Wearable Health
+K Heart_Rate
+F https://datasheets.maximintegrated.com/en/ds/MAX30101.pdf
+$ENDCMP
+#
+#End Doc Library

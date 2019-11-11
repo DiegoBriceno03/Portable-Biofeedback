@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/diego/Dropbox/Git/Senior Design/Heart Rate Sensor Devboard/HRSensorDevBoard/HRSensorDevBoard.sch</source>
+    <date>Wed 06 Nov 2019 03:04:43 PM EST</date>
+    <tool>Eeschema 5.1.4-e60b266~84~ubuntu18.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>MAX30101 Breakoutboard</title>
+        <company>Group 11</company>
+        <rev>-</rev>
+        <date>2019-11-06</date>
+        <source>HRSensorDevBoard.sch</source>
+        <comment number="1" value="Diego Briceno"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J2">
+      <value>Right</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/Molex/22-28-5070?qs=sGAEpiMZZMs%252BGHln7q6pm8uos17B4BQAMzBAw3mRYrk%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">22-28-5070</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x07_Female" description="Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC15417</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Left</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/Molex/22-28-5070?qs=sGAEpiMZZMs%252BGHln7q6pm8uos17B4BQAMzBAw3mRYrk%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">22-28-5070</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x07_Female" description="Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC16007</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>1.5k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">ERJ-UP6J152V</field>
+        <field name="Rating">1/8W</field>
+      </fields>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC1CF8D</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/KEMET/C0805C106K8RACAUTO?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPP3pE5nDuu0nSWsplCVkxSFQ%3D%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">
+C0805C106K8RACAUTO</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC20374</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>MAX30101EFD+</value>
+      <footprint>Maxim_HR:MAX30101EFD+</footprint>
+      <datasheet>https://datasheets.maximintegrated.com/en/ds/MAX30101.pdf</datasheet>
+      <fields>
+        <field name="Manufacturing #">MAX30101EFD+</field>
+      </fields>
+      <libsource lib="2019-10-23_18-23-19" part="MAX30101EFD+" description="High-Sensitivity Pulse Oximeter and Heart-Rate Sensor for Wearable Health"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC11DB2</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/KEMET/C0805C106K8RACAUTO?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPP3pE5nDuu0nSWsplCVkxSFQ%3D%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">
+C0805C106K8RACAUTO</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC7646F</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/KEMET/C0805C105M8RACAUTO?qs=sGAEpiMZZMukHu%252BjC5l7YdEesn4vdoz7DtbBa89xY60%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">
+C0805C105M8RACAUTO</field>
+        <field name="Rating">10V</field>
+        <field name="Tolerance">10%</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC1BC70</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/KEMET/C0805C105M8RACAUTO?qs=sGAEpiMZZMukHu%252BjC5l7YdEesn4vdoz7DtbBa89xY60%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">
+C0805C105M8RACAUTO</field>
+        <field name="Rating">10V</field>
+        <field name="Tolerance">10%</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC76756</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>1.5k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">ERJ-UP6J152V</field>
+        <field name="Rating">1/8W</field>
+      </fields>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC1FF9C</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>1.5k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D</datasheet>
+      <fields>
+        <field name="Manufacturing #">ERJ-UP6J152V</field>
+        <field name="Rating">1/8W</field>
+      </fields>
+      <libsource lib="Device" part="R_Small_US" description="Resistor, small US symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC1FDF2</tstamp>
+    </comp>
+    <comp ref="NT1">
+      <value>AGND - GND</value>
+      <footprint>NetTie:NetTie-2_SMD_Pad0.5mm</footprint>
+      <datasheet>N/A</datasheet>
+      <fields>
+        <field name="Manufacturing #">N/A</field>
+      </fields>
+      <libsource lib="Device" part="Net-Tie_2" description="Net tie, 2 pins"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5DC333BC</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="2019-10-23_18-23-19" part="MAX30101EFD+">
+      <description>High-Sensitivity Pulse Oximeter and Heart-Rate Sensor for Wearable Health</description>
+      <docs>https://datasheets.maximintegrated.com/en/ds/MAX30101.pdf</docs>
+      <footprints>
+        <fp>21-0880B</fp>
+        <fp>21-0880B-M</fp>
+        <fp>21-0880B-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U?</field>
+        <field name="Value">MAX30101EFD+</field>
+        <field name="Footprint">Maxim_HR:MAX30101EFD+</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC1" type="NotConnected"/>
+        <pin num="2" name="SCL" type="input"/>
+        <pin num="3" name="SDA" type="BiDi"/>
+        <pin num="4" name="PGND" type="power_in"/>
+        <pin num="5" name="R_DRV/NC5" type="NotConnected"/>
+        <pin num="6" name="IR_DRV/NC6" type="NotConnected"/>
+        <pin num="7" name="G_DRV/NC7" type="NotConnected"/>
+        <pin num="8" name="NC8" type="NotConnected"/>
+        <pin num="9" name="VLED+" type="unspc"/>
+        <pin num="10" name="VLED+" type="unspc"/>
+        <pin num="11" name="VDD" type="power_in"/>
+        <pin num="12" name="GND" type="power_in"/>
+        <pin num="13" name="~INT" type="unspc"/>
+        <pin num="14" name="NC14" type="NotConnected"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x07_Female">
+      <description>Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x07_Female</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Net-Tie_2">
+      <description>Net tie, 2 pins</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Net*Tie*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">NT</field>
+        <field name="Value">Net-Tie_2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small_US">
+      <description>Resistor, small US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small_US</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="2019-10-23_18-23-19">
+      <uri>/home/diego/Dropbox/Git/Senior Design/Footprint/MAX3010EFD+/2019-10-23_18-23-19.lib</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/library/Device.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="C4" pin="2"/>
+      <node ref="J2" pin="3"/>
+      <node ref="U1" pin="12"/>
+      <node ref="NT1" pin="2"/>
+      <node ref="C3" pin="2"/>
+    </net>
+    <net code="2" name="+1V8">
+      <node ref="R3" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="R1" pin="1"/>
+      <node ref="C4" pin="1"/>
+      <node ref="C3" pin="1"/>
+      <node ref="J2" pin="1"/>
+      <node ref="J2" pin="4"/>
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="3" name="VCC">
+      <node ref="C1" pin="1"/>
+      <node ref="J2" pin="7"/>
+      <node ref="J2" pin="5"/>
+      <node ref="U1" pin="9"/>
+      <node ref="J2" pin="6"/>
+      <node ref="U1" pin="10"/>
+      <node ref="C2" pin="1"/>
+    </net>
+    <net code="4" name="Net-(J2-Pad2)">
+      <node ref="U1" pin="13"/>
+      <node ref="R3" pin="2"/>
+      <node ref="J2" pin="2"/>
+    </net>
+    <net code="5" name="GNDA">
+      <node ref="C2" pin="2"/>
+      <node ref="NT1" pin="1"/>
+      <node ref="J1" pin="4"/>
+      <node ref="J1" pin="5"/>
+      <node ref="U1" pin="4"/>
+      <node ref="J1" pin="6"/>
+      <node ref="J1" pin="7"/>
+      <node ref="C1" pin="2"/>
+    </net>
+    <net code="6" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3"/>
+      <node ref="R1" pin="2"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="7" name="Net-(U1-Pad1)">
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="8" name="Net-(U1-Pad14)">
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="9" name="Net-(J1-Pad2)">
+      <node ref="U1" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="10" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="11" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="12" name="Net-(U1-Pad7)">
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="13" name="Net-(U1-Pad8)">
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="14" name="Net-(J1-Pad1)">
+      <node ref="J1" pin="1"/>
+    </net>
+  </nets>
+</export>

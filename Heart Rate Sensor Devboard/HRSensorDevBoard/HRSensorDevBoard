@@ -1,0 +1,33 @@
+"Source:","/home/diego/Dropbox/Git/Senior Design/Heart Rate Sensor Devboard/HRSensorDevBoard/HRSensorDevBoard.sch"
+"Date:","Wed 06 Nov 2019 03:04:43 PM EST"
+"Tool:","Eeschema 5.1.4-e60b266~84~ubuntu18.04.1"
+"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value.py"
+"Component Count:","11"
+
+"Individual Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","Manufacturing #","Rating","Tolerance"
+"","","C1","10uF","Device:C_Small","Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/KEMET/C0805C106K8RACAUTO?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPP3pE5nDuu0nSWsplCVkxSFQ%3D%3D","C0805C106K8RACAUTO","",""
+"","","C2","1uF","Device:C_Small","Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/KEMET/C0805C105M8RACAUTO?qs=sGAEpiMZZMukHu%252BjC5l7YdEesn4vdoz7DtbBa89xY60%3D","C0805C105M8RACAUTO","10V","10%"
+"","","C3","10uF","Device:C_Small","Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/KEMET/C0805C106K8RACAUTO?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPP3pE5nDuu0nSWsplCVkxSFQ%3D%3D","C0805C106K8RACAUTO","",""
+"","","C4","1uF","Device:C_Small","Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/KEMET/C0805C105M8RACAUTO?qs=sGAEpiMZZMukHu%252BjC5l7YdEesn4vdoz7DtbBa89xY60%3D","C0805C105M8RACAUTO","10V","10%"
+"","","J1","Left","Connector:Conn_01x07_Female","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","https://www.mouser.com/ProductDetail/Molex/22-28-5070?qs=sGAEpiMZZMs%252BGHln7q6pm8uos17B4BQAMzBAw3mRYrk%3D","22-28-5070","",""
+"","","J2","Right","Connector:Conn_01x07_Female","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","https://www.mouser.com/ProductDetail/Molex/22-28-5070?qs=sGAEpiMZZMs%252BGHln7q6pm8uos17B4BQAMzBAw3mRYrk%3D","22-28-5070","",""
+"","","NT1","AGND - GND","Device:Net-Tie_2","NetTie:NetTie-2_SMD_Pad0.5mm","N/A","N/A","",""
+"","","R1","1.5k","Device:R_Small_US","Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D","ERJ-UP6J152V","1/8W",""
+"","","R2","1.5k","Device:R_Small_US","Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D","ERJ-UP6J152V","1/8W",""
+"","","R3","1.5k","Device:R_Small_US","Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D","ERJ-UP6J152V","1/8W",""
+"","","U1","MAX30101EFD+","2019-10-23_18-23-19:MAX30101EFD+","Maxim_HR:MAX30101EFD+","https://datasheets.maximintegrated.com/en/ds/MAX30101.pdf","MAX30101EFD+","",""
+
+
+
+"Collated Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","Manufacturing #","Rating","Tolerance"
+"1","2","C1, C3","10uF","Device:C_Small","Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/KEMET/C0805C106K8RACAUTO?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPP3pE5nDuu0nSWsplCVkxSFQ%3D%3D","C0805C106K8RACAUTO","",""
+"2","2","C2, C4","1uF","Device:C_Small","Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/KEMET/C0805C105M8RACAUTO?qs=sGAEpiMZZMukHu%252BjC5l7YdEesn4vdoz7DtbBa89xY60%3D","C0805C105M8RACAUTO","10V","10%"
+"3","1","J1","Left","Connector:Conn_01x07_Female","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","https://www.mouser.com/ProductDetail/Molex/22-28-5070?qs=sGAEpiMZZMs%252BGHln7q6pm8uos17B4BQAMzBAw3mRYrk%3D","22-28-5070","",""
+"4","1","J2","Right","Connector:Conn_01x07_Female","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","https://www.mouser.com/ProductDetail/Molex/22-28-5070?qs=sGAEpiMZZMs%252BGHln7q6pm8uos17B4BQAMzBAw3mRYrk%3D","22-28-5070","",""
+"5","1","NT1","AGND - GND","Device:Net-Tie_2","NetTie:NetTie-2_SMD_Pad0.5mm","N/A","N/A","",""
+"6","3","R1, R2, R3","1.5k","Device:R_Small_US","Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder","https://www.mouser.com/ProductDetail/Panasonic/ERJ-UP6J152V?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzCp2I%2Fk2xKv%2F9ftn2e56awQ%3D%3D","ERJ-UP6J152V","1/8W",""
+"7","1","U1","MAX30101EFD+","2019-10-23_18-23-19:MAX30101EFD+","Maxim_HR:MAX30101EFD+","https://datasheets.maximintegrated.com/en/ds/MAX30101.pdf","MAX30101EFD+","",""
