@@ -1,6 +1,8 @@
-/HRBreakoutBoard/HRSensorDevBoard-cache.lib
-/HRBreakoutBoard/HRSensorDevBoard.kicad_pcb
-/HRBreakoutBoard/HRSensorDevBoard.kicad_pcb-bak
-/HRBreakoutBoard/HRSensorDevBoard.sch
-/HRBreakoutBoard/sym-lib-table
-/HRBreakoutBoard/Gerbers
+# Breakout Board ignore
+/HRBreakoutBoardDesign/HRBreakoutBoard/HRSensorDevBoard-cache.lib
+/HRBreakoutBoardDesign/HRBreakoutBoard/HRSensorDevBoard.kicad_pcb
+/HRBreakoutBoardDesign/HRBreakoutBoard/HRSensorDevBoard.kicad_pcb-bak
+/HRBreakoutBoardDesign/HRBreakoutBoard/HRSensorDevBoard.sch
+/HRBreakoutBoardDesign/HRBreakoutBoard/sym-lib-table
+/HRBreakoutBoardDesign/HRBreakoutBoard/Gerbers
+/HRBreakoutBoardDesign/HRBreakoutBoard/fp-info-cache
