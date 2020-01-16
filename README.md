@@ -7,10 +7,10 @@ All the schematics and layout is done in Kicad 5.14 along with custom libraries.
 The accompanying Android app was developed in Android Studio 3.5.3, making use of Android SDK/API 21 (Android 5).
 
 ## Group 11 Members
-..* Grace Brazil (EE)
-..* Diego Briceno (EE)
-..* Gustavo Diaz Galeas (CpE)
-..* Nicholas Miller (CpE)
++ Grace Brazil (EE)
++ Diego Briceno (EE)
++ Gustavo Diaz Galeas (CpE)
++ Nicholas Miller (CpE)
 
 ## Hardware
 - [x] MAX30101 Heart Rate / Pulse Oximeter Breakout Board REV -
