@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name PGA309)(type Legacy)(uri "/home/diego/Dropbox/Git/Senior Design/Libraries/PGA309/PGA309.lib")(options "")(descr "")(disabled))
+)

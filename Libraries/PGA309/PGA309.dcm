@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PGA309
+D The PGA309 is a programmable analog signal conditioner designed for bridge sensors
+K Bridge Sensors, Programmable Gain Amplifier
+F https://www.ti.com/lit/ds/symlink/pga309.pdf
+$ENDCMP
+#
+#End Doc Library
