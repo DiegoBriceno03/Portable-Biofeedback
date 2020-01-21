@@ -7,9 +7,15 @@
 /HRBreakoutBoardDesign/HRBreakoutBoard/Gerbers
 /HRBreakoutBoardDesign/HRBreakoutBoard/fp-info-cache
 
-# GSR Breakout ignore
-
-
+# Testing for all the possible files inside of the repo
+*-cache.lib
+*.kicad_pcb-bak
+*/sym-lib-table
+*/fp-info-cache
+*/Gerbers
+*.dcm
+*.bak
+*/fp-lib-table
 # Temperature Breakout Ignore
 
 
