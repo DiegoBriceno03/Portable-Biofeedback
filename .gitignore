@@ -4,18 +4,17 @@
 /HRBreakoutBoardDesign/HRBreakoutBoard/HRSensorDevBoard.kicad_pcb-bak
 /HRBreakoutBoardDesign/HRBreakoutBoard/HRSensorDevBoard.sch
 /HRBreakoutBoardDesign/HRBreakoutBoard/sym-lib-table
-/HRBreakoutBoardDesign/HRBreakoutBoard/Gerbers
 /HRBreakoutBoardDesign/HRBreakoutBoard/fp-info-cache
 
 # Testing for all the possible files inside of the repo
 *-cache.lib
 *.kicad_pcb-bak
-*/sym-lib-table
-*/fp-info-cache
-*/Gerbers
+**/sym-lib-table
+**/fp-info-cache
+**/Gerbers
 *.dcm
 *.bak
-*/fp-lib-table
+**/fp-lib-table
 # Temperature Breakout Ignore
 
 
