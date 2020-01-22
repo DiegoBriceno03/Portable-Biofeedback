@@ -135,11 +135,12 @@ F 0 "C1" H 6342 3596 50  0000 L CNN
 F 1 "10uF" H 6342 3505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6250 3550 50  0001 C CNN
 F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 6250 3550 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/murata-electronics/GRM188R61A106KE69J/490-14372-1-ND/6606833" H 6250 3550 50  0001 C CNN "Allied Price/Stock"
+F 4 "" H 6250 3550 50  0001 C CNN "Allied Price/Stock"
 F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 6250 3550 50  0001 C CNN "Description"
-F 6 "Murata" H 6250 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "GRM188R61A106KE69J" H 6250 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "https://www.digikey.com/product-detail/en/murata-electronics/GRM188R61A106KE69J/490-14372-1-ND/6606833" H 6250 3550 50  0001 C CNN "Mouser Price/Stock"
+F 6 "" H 6250 3550 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 6250 3550 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 6250 3550 50  0001 C CNN "Mouser Price/Stock"
+F 9 "GRM188R61A106KE69J" H 6250 3550 50  0001 C CNN "Manfacturing #"
 	1    6250 3550
 	1    0    0    -1  
 $EndComp
@@ -151,11 +152,12 @@ F 0 "C2" H 6842 3596 50  0000 L CNN
 F 1 "0.1uF" H 6842 3505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6750 3550 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 6750 3550 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/kemet/C0201C101J3GACTU/399-8925-1-ND/3522442" H 6750 3550 50  0001 C CNN "Allied Price/Stock"
+F 4 "" H 6750 3550 50  0001 C CNN "Allied Price/Stock"
 F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 6750 3550 50  0001 C CNN "Description"
-F 6 "KEMET" H 6750 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "C0201C101J3GACTU" H 6750 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "https://www.digikey.com/product-detail/en/kemet/C0201C101J3GACTU/399-8925-1-ND/3522442" H 6750 3550 50  0001 C CNN "Mouser Price/Stock"
+F 6 "" H 6750 3550 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 6750 3550 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 6750 3550 50  0001 C CNN "Mouser Price/Stock"
+F 9 "C0201C101J3GACTU" H 6750 3550 50  0001 C CNN "Manfacturing #"
 	1    6750 3550
 	1    0    0    -1  
 $EndComp
@@ -167,11 +169,12 @@ F 0 "C3" H 8692 3596 50  0000 L CNN
 F 1 "0.1uF" H 8692 3505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8600 3550 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 8600 3550 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/kemet/C0201C101J3GACTU/399-8925-1-ND/3522442" H 8600 3550 50  0001 C CNN "Allied Price/Stock"
+F 4 "" H 8600 3550 50  0001 C CNN "Allied Price/Stock"
 F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 8600 3550 50  0001 C CNN "Description"
-F 6 "KEMET" H 8600 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "C0201C101J3GACTU" H 8600 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "https://www.digikey.com/product-detail/en/kemet/C0201C101J3GACTU/399-8925-1-ND/3522442" H 8600 3550 50  0001 C CNN "Mouser Price/Stock"
+F 6 "" H 8600 3550 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 8600 3550 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 8600 3550 50  0001 C CNN "Mouser Price/Stock"
+F 9 "C0201C101J3GACTU" H 8600 3550 50  0001 C CNN "Manfacturing #"
 	1    8600 3550
 	1    0    0    -1  
 $EndComp
@@ -183,11 +186,12 @@ F 0 "C5" H 9192 3596 50  0000 L CNN
 F 1 "10uF" H 9192 3505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9100 3550 50  0001 C CNN
 F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 9100 3550 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/murata-electronics/GRM188R61A106KE69J/490-14372-1-ND/6606833" H 9100 3550 50  0001 C CNN "Allied Price/Stock"
+F 4 "" H 9100 3550 50  0001 C CNN "Allied Price/Stock"
 F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9100 3550 50  0001 C CNN "Description"
-F 6 "Murata" H 9100 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "GRM188R61A106KE69J" H 9100 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "https://www.digikey.com/product-detail/en/murata-electronics/GRM188R61A106KE69J/490-14372-1-ND/6606833" H 9100 3550 50  0001 C CNN "Mouser Price/Stock"
+F 6 "" H 9100 3550 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 9100 3550 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 9100 3550 50  0001 C CNN "Mouser Price/Stock"
+F 9 "GRM188R61A106KE69J" H 9100 3550 50  0001 C CNN "Manfacturing #"
 	1    9100 3550
 	1    0    0    -1  
 $EndComp
@@ -199,11 +203,12 @@ F 0 "C4" H 8692 4296 50  0000 L CNN
 F 1 "0.1uF" H 8692 4205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8600 4250 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 8600 4250 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/kemet/C0201C101J3GACTU/399-8925-1-ND/3522442" H 8600 4250 50  0001 C CNN "Allied Price/Stock"
+F 4 "" H 8600 4250 50  0001 C CNN "Allied Price/Stock"
 F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 8600 4250 50  0001 C CNN "Description"
-F 6 "KEMET" H 8600 4250 50  0001 C CNN "Manufacturer_Name"
-F 7 "C0201C101J3GACTU" H 8600 4250 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "https://www.digikey.com/product-detail/en/kemet/C0201C101J3GACTU/399-8925-1-ND/3522442" H 8600 4250 50  0001 C CNN "Mouser Price/Stock"
+F 6 "" H 8600 4250 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 8600 4250 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 8600 4250 50  0001 C CNN "Mouser Price/Stock"
+F 9 "C0201C101J3GACTU" H 8600 4250 50  0001 C CNN "Manfacturing #"
 	1    8600 4250
 	1    0    0    -1  
 $EndComp
@@ -215,11 +220,12 @@ F 0 "C6" H 9192 4296 50  0000 L CNN
 F 1 "10uF" H 9192 4205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9100 4250 50  0001 C CNN
 F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 9100 4250 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/murata-electronics/GRM188R61A106KE69J/490-14372-1-ND/6606833" H 9100 4250 50  0001 C CNN "Allied Price/Stock"
+F 4 "" H 9100 4250 50  0001 C CNN "Allied Price/Stock"
 F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9100 4250 50  0001 C CNN "Description"
-F 6 "Murata" H 9100 4250 50  0001 C CNN "Manufacturer_Name"
-F 7 "GRM188R61A106KE69J" H 9100 4250 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "https://www.digikey.com/product-detail/en/murata-electronics/GRM188R61A106KE69J/490-14372-1-ND/6606833" H 9100 4250 50  0001 C CNN "Mouser Price/Stock"
+F 6 "" H 9100 4250 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 9100 4250 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 9100 4250 50  0001 C CNN "Mouser Price/Stock"
+F 9 "GRM188R61A106KE69J" H 9100 4250 50  0001 C CNN "Manfacturing #"
 	1    9100 4250
 	1    0    0    -1  
 $EndComp
@@ -489,14 +495,15 @@ F 0 "J1" H 10050 2615 50  0000 C CNN
 F 1 "105430-1102" H 10050 2524 50  0000 C CNN
 F 2 "105430-1102:1054301102" H 10300 2450 50  0001 L CNN
 F 3 "https://componentsearchengine.com/Datasheets/2/105430-1102.pdf" H 10300 2350 50  0001 L CNN
-F 4 "https://www.alliedelec.com/molexincorporated-105430-1102/71607964/" H 9650 2350 50  0001 C CNN "Allied Price/Stock"
-F 5 "71607964" H 9650 2350 50  0001 C CNN "Allied_Number"
+F 4 "" H 9650 2350 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9650 2350 50  0001 C CNN "Allied_Number"
 F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 2350 50  0001 C CNN "Description"
-F 7 "6.99" H 9650 2350 50  0001 C CNN "Height"
-F 8 "Molex" H 9650 2350 50  0001 C CNN "Manufacturer_Name"
-F 9 "105430-1102" H 9650 2350 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "538-105430-1102" H 9650 2350 50  0001 C CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=538-105430-1102" H 9650 2350 50  0001 C CNN "Mouser Price/Stock"
+F 7 "" H 9650 2350 50  0001 C CNN "Height"
+F 8 "" H 9650 2350 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9650 2350 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9650 2350 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9650 2350 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9650 2350 50  0001 C CNN "Manfacturing #"
 	1    9650 2350
 	1    0    0    -1  
 $EndComp
@@ -508,14 +515,15 @@ F 0 "J2" H 10050 3565 50  0000 C CNN
 F 1 "105430-1102" H 10050 3474 50  0000 C CNN
 F 2 "105430-1102:1054301102" H 10300 3400 50  0001 L CNN
 F 3 "https://componentsearchengine.com/Datasheets/2/105430-1102.pdf" H 10300 3300 50  0001 L CNN
-F 4 "https://www.alliedelec.com/molexincorporated-105430-1102/71607964/" H 9650 3300 50  0001 C CNN "Allied Price/Stock"
-F 5 "71607964" H 9650 3300 50  0001 C CNN "Allied_Number"
+F 4 "" H 9650 3300 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9650 3300 50  0001 C CNN "Allied_Number"
 F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 3300 50  0001 C CNN "Description"
-F 7 "6.99" H 9650 3300 50  0001 C CNN "Height"
-F 8 "Molex" H 9650 3300 50  0001 C CNN "Manufacturer_Name"
-F 9 "105430-1102" H 9650 3300 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "538-105430-1102" H 9650 3300 50  0001 C CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=538-105430-1102" H 9650 3300 50  0001 C CNN "Mouser Price/Stock"
+F 7 "" H 9650 3300 50  0001 C CNN "Height"
+F 8 "" H 9650 3300 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9650 3300 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9650 3300 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9650 3300 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9650 3300 50  0001 C CNN "Manfacturing #"
 	1    9650 3300
 	1    0    0    -1  
 $EndComp
@@ -527,14 +535,15 @@ F 0 "J3" H 10050 4315 50  0000 C CNN
 F 1 "105430-1102" H 10050 4224 50  0000 C CNN
 F 2 "105430-1102:1054301102" H 10300 4150 50  0001 L CNN
 F 3 "https://componentsearchengine.com/Datasheets/2/105430-1102.pdf" H 10300 4050 50  0001 L CNN
-F 4 "https://www.alliedelec.com/molexincorporated-105430-1102/71607964/" H 9650 4050 50  0001 C CNN "Allied Price/Stock"
-F 5 "71607964" H 9650 4050 50  0001 C CNN "Allied_Number"
+F 4 "" H 9650 4050 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9650 4050 50  0001 C CNN "Allied_Number"
 F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 4050 50  0001 C CNN "Description"
-F 7 "6.99" H 9650 4050 50  0001 C CNN "Height"
-F 8 "Molex" H 9650 4050 50  0001 C CNN "Manufacturer_Name"
-F 9 "105430-1102" H 9650 4050 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "538-105430-1102" H 9650 4050 50  0001 C CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=538-105430-1102" H 9650 4050 50  0001 C CNN "Mouser Price/Stock"
+F 7 "" H 9650 4050 50  0001 C CNN "Height"
+F 8 "" H 9650 4050 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9650 4050 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9650 4050 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9650 4050 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9650 4050 50  0001 C CNN "Manfacturing #"
 	1    9650 4050
 	1    0    0    -1  
 $EndComp
