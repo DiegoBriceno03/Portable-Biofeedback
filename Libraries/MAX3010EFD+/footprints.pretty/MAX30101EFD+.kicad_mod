@@ -1,4 +1,4 @@
-(module MAX30101EFD+ (layer F.Cu) (tedit 5DC106F5)
+(module MAX30101EFD+ (layer F.Cu) (tedit 5E2778F0)
   (fp_text reference U? (at 0 -4.318) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -38,4 +38,9 @@
   (pad 12 smd rect (at 1.3462 -0.799998) (size 0.8128 0.254) (layers F.Cu F.Paste F.Mask))
   (pad 13 smd rect (at 1.3462 -1.599999) (size 0.8128 0.254) (layers F.Cu F.Paste F.Mask))
   (pad 14 smd rect (at 1.3462 -2.4) (size 0.8128 0.254) (layers F.Cu F.Paste F.Mask))
+  (model ${KI_SDREPO}/MAX3010EFD+/MAX30101EFD+.step
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
