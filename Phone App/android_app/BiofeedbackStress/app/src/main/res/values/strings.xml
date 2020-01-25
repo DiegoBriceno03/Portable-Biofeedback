@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Stress Management</string>
+    <string name="hello">Hello World!</string>
+    <string name="bl_scan">Scan for Devices</string>
+</resources>
