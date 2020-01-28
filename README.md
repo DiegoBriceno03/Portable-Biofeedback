@@ -1,4 +1,4 @@
-# Portable Biofeedpack Device Hardware Repository
+# Portable Biofeedback Device Repository
 
 A repository that stores hardware and software files developed for the Portable Biofeedback Device, as worked on and built by students in the Electrical & Computer Engineering (ECE) Department of the College of Engineering & Computer Science (CECS) at the University of Central Florida (UCF) in Orlando, Florida.
 
@@ -22,5 +22,8 @@ These projects use custom path for its libraries. The custom Kicad Path variable
 - [x] Battery Charging Managing circuit (BMS)
 - [x] Power Regulation
 
-
-
+## Software
+- [ ] Heart Rate Data Processing Algorithm
+- [ ] Temperature Data Processing Algorithm
+- [ ] Galvanic Skin Resistance Data Processing Algorithm
+- [ ] UI / UX
