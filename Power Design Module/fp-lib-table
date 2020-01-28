@@ -1,5 +1,5 @@
 (fp_lib_table
-  (lib (name TPS61232DRCR)(type KiCad)(uri "C:/Users/QueenTomato/Dropbox/Senior Design/Libraries/TPS6123x+/TPS61232DRCR")(options "")(descr ""))
+  (lib (name TPS61232DRCR)(type KiCad)(uri ${KI_SDREPO}/TPS6123x+/TPS61232DRCR)(options "")(descr ""))
   (lib (name IHLP2020BZER1R0M01)(type KiCad)(uri ${KI_SDREPO}/IHLP2020BZER1R0M01/IHLP2020BZER1R0M01)(options "")(descr ""))
   (lib (name TPPM0110DWPR)(type KiCad)(uri ${KI_SDREPO}/TPPM0110DWPR/TPPM0110DWPR)(options "")(descr ""))
   (lib (name Molex_Connector_10543)(type KiCad)(uri ${KIPRJMOD}/Molex_Connector_10543.pretty)(options "")(descr "")(disabled))

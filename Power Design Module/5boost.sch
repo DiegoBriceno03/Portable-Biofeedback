@@ -13,538 +13,683 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Wire Line
-	3550 2650 2800 2650
-Wire Wire Line
-	3850 2650 4750 2650
-Wire Wire Line
-	4750 2650 4750 3350
-Wire Wire Line
-	4750 3450 4750 3350
-Connection ~ 4750 3350
-Wire Wire Line
-	3750 4500 3750 4350
-Wire Wire Line
-	3750 4350 2800 4350
-Wire Wire Line
-	2800 4350 2800 3950
-Wire Wire Line
-	2800 3950 2950 3950
-Wire Wire Line
-	3750 4350 5650 4350
-Connection ~ 3750 4350
-Connection ~ 2800 4350
-Wire Wire Line
-	2950 3800 2450 3800
-Wire Wire Line
-	5050 3550 5050 3300
-Wire Wire Line
-	4550 3650 5050 3650
-Wire Wire Line
-	5050 3650 5050 3550
-Connection ~ 5050 3550
-Wire Wire Line
-	1900 3650 1900 3350
-Wire Wire Line
-	1900 3950 1900 4350
-Connection ~ 1900 4350
-Wire Wire Line
-	4550 3350 4750 3350
-Wire Wire Line
-	4550 3450 4750 3450
-Wire Wire Line
-	4550 3550 5050 3550
-Wire Wire Line
-	2950 3350 2800 3350
-Connection ~ 1900 3350
-Wire Wire Line
-	2800 2650 2800 3350
-Connection ~ 2800 3350
-Wire Wire Line
-	2800 3350 1900 3350
-Wire Wire Line
-	2950 3450 2800 3450
-Wire Wire Line
-	2800 3450 2800 3350
 $Comp
 L TPS61232DRCR:TPS61232DRCR U1
 U 1 1 5E215DC2
-P 2950 3350
-F 0 "U1" H 3750 3737 60  0000 C CNN
-F 1 "TPS61232DRCR" H 3750 3631 60  0000 C CNN
-F 2 "TPS61232DRCR:TPS61232DRCR" H 3750 3600 60  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/tps61232.pdf" H 2950 3350 60  0001 C CNN
-	1    2950 3350
+P 3950 3350
+F 0 "U1" H 4600 3700 60  0000 C CNN
+F 1 "TPS61232DRCR" H 4600 3600 60  0000 C CNN
+F 2 "TPS61232DRCR:TPS61232DRCR" H 4750 3600 60  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/tps61232.pdf" H 3950 3350 60  0001 C CNN
+	1    3950 3350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:L L1
 U 1 1 5E201A61
-P 3700 2650
-F 0 "L1" V 3890 2650 50  0000 C CNN
-F 1 "1uH" V 3799 2650 50  0000 C CNN
-F 2 "IHLP2020BZER1R0M01:IHLP2020BZER1R0M01" H 3700 2650 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/34253/ihlp-2020bz-01.pdf" H 3700 2650 50  0001 C CNN
-	1    3700 2650
+P 4600 2850
+F 0 "L1" V 4790 2850 50  0000 C CNN
+F 1 "1uH" V 4699 2850 50  0000 C CNN
+F 2 "IHLP2020BZER1R0M01:IHLP2020BZER1R0M01" H 4600 2850 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/34253/ihlp-2020bz-01.pdf" H 4600 2850 50  0001 C CNN
+F 4 "IHLP2020BZER1R0M01" V 4600 2850 50  0001 C CNN "Manfacturing #"
+	1    4600 2850
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 5boost-rescue:C1608X5R1A106M080AC-C1608X5R1A106M080AC C7
-U 1 1 5E214585
-P 1900 3650
-F 0 "C7" V 1997 3754 60  0000 L CNN
-F 1 "10μF" V 2150 3750 60  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2050 3290 60  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 1900 3650 60  0001 C CNN
-	1    1900 3650
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5050 3300 5650 3300
-$Comp
-L 5boost-rescue:C2012X7R1A106M125AC-C2012X7R1A106M125AC C9
-U 1 1 5E220947
-P 5650 3350
-F 0 "C9" V 5747 3454 60  0000 L CNN
-F 1 "10uF" V 5900 3500 60  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 2990 60  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 5650 3350 60  0001 C CNN
-	1    5650 3350
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5650 3350 5650 3300
-$Comp
 L TPPM0110DWPR:TPPM0110DWPR U2
 U 1 1 5E211CE4
-P 6550 2950
-F 0 "U2" H 7650 2900 60  0000 C CNN
-F 1 "TPPM0110DWPR" H 7650 2800 60  0000 C CNN
-F 2 "TPPM0110DWPR:TPPM0110DWPR" H 7850 3190 60  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/tppm0110.pdf" H 6550 2950 60  0001 C CNN
-	1    6550 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5650 3650 5650 4350
-$Comp
-L Device:C_Small C1
-U 1 1 5E21D683
-P 6250 3550
-F 0 "C1" H 6342 3596 50  0000 L CNN
-F 1 "10uF" H 6342 3505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6250 3550 50  0001 C CNN
-F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 6250 3550 50  0001 C CNN
-F 4 "" H 6250 3550 50  0001 C CNN "Allied Price/Stock"
-F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 6250 3550 50  0001 C CNN "Description"
-F 6 "" H 6250 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "" H 6250 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "" H 6250 3550 50  0001 C CNN "Mouser Price/Stock"
-F 9 "GRM188R61A106KE69J" H 6250 3550 50  0001 C CNN "Manfacturing #"
-	1    6250 3550
+P 6950 3200
+F 0 "U2" H 8050 3150 60  0000 C CNN
+F 1 "TPPM0110DWPR" H 8050 3050 60  0000 C CNN
+F 2 "TPPM0110DWPR:TPPM0110DWPR" H 8250 3440 60  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/tppm0110.pdf" H 6950 3200 60  0001 C CNN
+	1    6950 3200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C2
 U 1 1 5E222350
-P 6750 3550
-F 0 "C2" H 6842 3596 50  0000 L CNN
-F 1 "0.1uF" H 6842 3505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6750 3550 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 6750 3550 50  0001 C CNN
-F 4 "" H 6750 3550 50  0001 C CNN "Allied Price/Stock"
-F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 6750 3550 50  0001 C CNN "Description"
-F 6 "" H 6750 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "" H 6750 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "" H 6750 3550 50  0001 C CNN "Mouser Price/Stock"
-F 9 "C0201C101J3GACTU" H 6750 3550 50  0001 C CNN "Manfacturing #"
-	1    6750 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C3
-U 1 1 5E224949
-P 8600 3550
-F 0 "C3" H 8692 3596 50  0000 L CNN
-F 1 "0.1uF" H 8692 3505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8600 3550 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 8600 3550 50  0001 C CNN
-F 4 "" H 8600 3550 50  0001 C CNN "Allied Price/Stock"
-F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 8600 3550 50  0001 C CNN "Description"
-F 6 "" H 8600 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "" H 8600 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "" H 8600 3550 50  0001 C CNN "Mouser Price/Stock"
-F 9 "C0201C101J3GACTU" H 8600 3550 50  0001 C CNN "Manfacturing #"
-	1    8600 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C5
-U 1 1 5E2253F6
-P 9100 3550
-F 0 "C5" H 9192 3596 50  0000 L CNN
-F 1 "10uF" H 9192 3505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9100 3550 50  0001 C CNN
-F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 9100 3550 50  0001 C CNN
-F 4 "" H 9100 3550 50  0001 C CNN "Allied Price/Stock"
-F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9100 3550 50  0001 C CNN "Description"
-F 6 "" H 9100 3550 50  0001 C CNN "Manufacturer_Name"
-F 7 "" H 9100 3550 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "" H 9100 3550 50  0001 C CNN "Mouser Price/Stock"
-F 9 "GRM188R61A106KE69J" H 9100 3550 50  0001 C CNN "Manfacturing #"
-	1    9100 3550
-	1    0    0    -1  
+P 7400 3750
+F 0 "C2" H 7492 3796 50  0000 L CNN
+F 1 "0.1uF" H 7492 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7400 3750 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 7400 3750 50  0001 C CNN
+F 4 "" H 7400 3750 50  0001 C CNN "Allied Price/Stock"
+F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 7400 3750 50  0001 C CNN "Description"
+F 6 "" H 7400 3750 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 7400 3750 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 7400 3750 50  0001 C CNN "Mouser Price/Stock"
+F 9 "C0201C101J3GACTU" H 7400 3750 50  0001 C CNN "Manfacturing #"
+	1    7400 3750
+	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C4
 U 1 1 5E225E5D
-P 8600 4250
-F 0 "C4" H 8692 4296 50  0000 L CNN
-F 1 "0.1uF" H 8692 4205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8600 4250 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 8600 4250 50  0001 C CNN
-F 4 "" H 8600 4250 50  0001 C CNN "Allied Price/Stock"
-F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 8600 4250 50  0001 C CNN "Description"
-F 6 "" H 8600 4250 50  0001 C CNN "Manufacturer_Name"
-F 7 "" H 8600 4250 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "" H 8600 4250 50  0001 C CNN "Mouser Price/Stock"
-F 9 "C0201C101J3GACTU" H 8600 4250 50  0001 C CNN "Manfacturing #"
-	1    8600 4250
+P 8650 4450
+F 0 "C4" H 8742 4496 50  0000 L CNN
+F 1 "0.1uF" H 8742 4405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8650 4450 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 8650 4450 50  0001 C CNN
+F 4 "" H 8650 4450 50  0001 C CNN "Allied Price/Stock"
+F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 8650 4450 50  0001 C CNN "Description"
+F 6 "" H 8650 4450 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 8650 4450 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 8650 4450 50  0001 C CNN "Mouser Price/Stock"
+F 9 "C0201C101J3GACTU" H 8650 4450 50  0001 C CNN "Manfacturing #"
+	1    8650 4450
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C6
 U 1 1 5E226DBD
-P 9100 4250
-F 0 "C6" H 9192 4296 50  0000 L CNN
-F 1 "10uF" H 9192 4205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9100 4250 50  0001 C CNN
-F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 9100 4250 50  0001 C CNN
-F 4 "" H 9100 4250 50  0001 C CNN "Allied Price/Stock"
-F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9100 4250 50  0001 C CNN "Description"
-F 6 "" H 9100 4250 50  0001 C CNN "Manufacturer_Name"
-F 7 "" H 9100 4250 50  0001 C CNN "Manufacturer_Part_Number"
-F 8 "" H 9100 4250 50  0001 C CNN "Mouser Price/Stock"
-F 9 "GRM188R61A106KE69J" H 9100 4250 50  0001 C CNN "Manfacturing #"
-	1    9100 4250
+P 9050 4450
+F 0 "C6" H 9142 4496 50  0000 L CNN
+F 1 "10uF" H 9142 4405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9050 4450 50  0001 C CNN
+F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 9050 4450 50  0001 C CNN
+F 4 "" H 9050 4450 50  0001 C CNN "Allied Price/Stock"
+F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9050 4450 50  0001 C CNN "Description"
+F 6 "" H 9050 4450 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 9050 4450 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 9050 4450 50  0001 C CNN "Mouser Price/Stock"
+F 9 "GRM188R61A106KE69J" H 9050 4450 50  0001 C CNN "Manfacturing #"
+	1    9050 4450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6250 3450 6250 3300
-Wire Wire Line
-	6250 3300 6750 3300
-Wire Wire Line
-	6750 3450 6750 3300
-Connection ~ 6750 3300
-Wire Wire Line
-	6750 3300 7100 3300
-Wire Wire Line
-	6250 3650 6250 3750
-Wire Wire Line
-	8150 3300 8600 3300
-Wire Wire Line
-	8600 3300 8600 3450
-Wire Wire Line
-	8600 3300 9100 3300
-Wire Wire Line
-	9100 3300 9100 3450
-Connection ~ 8600 3300
-Wire Wire Line
-	8850 3700 8850 3750
-Wire Wire Line
-	8150 4050 8600 4050
-Wire Wire Line
-	8600 4050 8600 4150
-Wire Wire Line
-	9100 4150 9100 4050
-Wire Wire Line
-	9100 4050 8600 4050
-Connection ~ 8600 4050
-Wire Wire Line
-	8600 4350 8600 4450
-Wire Wire Line
-	9100 4350 9100 4450
-Wire Wire Line
-	8600 3650 8600 3700
-Wire Wire Line
-	8600 3700 8850 3700
-Wire Wire Line
-	9100 3650 9100 3700
-Wire Wire Line
-	9100 3700 8850 3700
-Connection ~ 8850 3700
-Wire Wire Line
-	6750 3650 6750 3750
-Wire Wire Line
-	5650 3300 6250 3300
-Connection ~ 5650 3300
-Connection ~ 6250 3300
 $Sheet
-S 800  3250 550  1200
+S 1400 3150 550  650 
 U 5E25984C
 F0 "ChargingCircuit" 50
 F1 "ChargingCircuit.sch" 50
-F2 "Voutbat" I R 1350 3350 50 
-F3 "GND" I R 1350 4350 50 
+F2 "Voutbat" I R 1950 3250 50 
 $EndSheet
-Wire Wire Line
-	6250 3750 6500 3750
-Wire Wire Line
-	8600 4450 8850 4450
-Wire Wire Line
-	1350 3350 1900 3350
 $Comp
 L power:GND #PWR0101
 U 1 1 5E251E92
-P 3750 4500
-F 0 "#PWR0101" H 3750 4250 50  0001 C CNN
-F 1 "GND" H 3755 4327 50  0000 C CNN
-F 2 "" H 3750 4500 50  0001 C CNN
-F 3 "" H 3750 4500 50  0001 C CNN
-	1    3750 4500
+P 2750 3550
+F 0 "#PWR0101" H 2750 3300 50  0001 C CNN
+F 1 "GND" H 2755 3377 50  0000 C CNN
+F 2 "" H 2750 3550 50  0001 C CNN
+F 3 "" H 2750 3550 50  0001 C CNN
+	1    2750 3550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 5E2526DE
-P 6500 3850
-F 0 "#PWR0103" H 6500 3600 50  0001 C CNN
-F 1 "GND" H 6505 3677 50  0000 C CNN
-F 2 "" H 6500 3850 50  0001 C CNN
-F 3 "" H 6500 3850 50  0001 C CNN
-	1    6500 3850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0104
-U 1 1 5E25339E
-P 8850 3750
-F 0 "#PWR0104" H 8850 3500 50  0001 C CNN
-F 1 "GND" H 8855 3577 50  0000 C CNN
-F 2 "" H 8850 3750 50  0001 C CNN
-F 3 "" H 8850 3750 50  0001 C CNN
-	1    8850 3750
-	1    0    0    -1  
+P 7400 3900
+F 0 "#PWR0103" H 7400 3650 50  0001 C CNN
+F 1 "GND" H 7405 3727 50  0000 C CNN
+F 2 "" H 7400 3900 50  0001 C CNN
+F 3 "" H 7400 3900 50  0001 C CNN
+	1    7400 3900
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0105
 U 1 1 5E2536D6
-P 8850 4500
-F 0 "#PWR0105" H 8850 4250 50  0001 C CNN
-F 1 "GND" H 8855 4327 50  0000 C CNN
-F 2 "" H 8850 4500 50  0001 C CNN
-F 3 "" H 8850 4500 50  0001 C CNN
-	1    8850 4500
+P 8850 4650
+F 0 "#PWR0105" H 8850 4400 50  0001 C CNN
+F 1 "GND" H 8855 4477 50  0000 C CNN
+F 2 "" H 8850 4650 50  0001 C CNN
+F 3 "" H 8850 4650 50  0001 C CNN
+	1    8850 4650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6500 3850 6500 3750
-Connection ~ 6500 3750
-Wire Wire Line
-	6500 3750 6750 3750
-Wire Wire Line
-	8850 4500 8850 4450
-Connection ~ 8850 4450
-Wire Wire Line
-	8850 4450 9100 4450
-Wire Wire Line
-	1350 4350 1900 4350
 $Comp
 L 5boost-rescue:C1608X5R1A106M080AC-C1608X5R1A106M080AC C8
 U 1 1 5E252172
-P 2450 3950
-F 0 "C8" V 2547 4054 60  0000 L CNN
-F 1 "15nF" V 2700 4050 60  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2600 3590 60  0001 C CNN
-F 3 "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us" H 2450 3950 60  0001 C CNN
-	1    2450 3950
+P 3850 3950
+F 0 "C8" V 3947 4054 60  0000 L CNN
+F 1 "22nF" V 4100 4050 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4000 3590 60  0001 C CNN
+F 3 "" H 3850 3950 60  0001 C CNN
+F 4 "C0603C223K4RACTU" V 3850 3950 50  0001 C CNN "Manfacturing #"
+	1    3850 3950
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	1900 4350 2450 4350
-Wire Wire Line
-	2450 4250 2450 4350
-Connection ~ 2450 4350
-Wire Wire Line
-	2450 4350 2800 4350
-Wire Wire Line
-	2450 3800 2450 3950
 $Comp
 L power:GND #PWR0102
 U 1 1 5E252275
-P 7100 4300
-F 0 "#PWR0102" H 7100 4050 50  0001 C CNN
-F 1 "GND" H 7105 4127 50  0000 C CNN
-F 2 "" H 7100 4300 50  0001 C CNN
-F 3 "" H 7100 4300 50  0001 C CNN
-	1    7100 4300
+P 7450 4550
+F 0 "#PWR0102" H 7450 4300 50  0001 C CNN
+F 1 "GND" H 7455 4377 50  0000 C CNN
+F 2 "" H 7450 4550 50  0001 C CNN
+F 3 "" H 7450 4550 50  0001 C CNN
+	1    7450 4550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7100 4050 7100 4300
+Text Notes 3300 4850 0    50   ~ 0
+Buck/Boot is capable of softstart.\nThis feature is determined in section 8.3.1 of TPS61232
 $Comp
-L power:GND #PWR03
-U 1 1 5E25CE32
-P 9650 4300
-F 0 "#PWR03" H 9650 4050 50  0001 C CNN
-F 1 "GND" H 9655 4127 50  0000 C CNN
-F 2 "" H 9650 4300 50  0001 C CNN
-F 3 "" H 9650 4300 50  0001 C CNN
-	1    9650 4300
+L Device:C_Small C13
+U 1 1 5E358676
+P 6550 3750
+F 0 "C13" H 6650 3800 60  0000 L CNN
+F 1 "10uF" H 6650 3700 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6700 3390 60  0001 C CNN
+F 3 "" H 6550 3750 60  0001 C CNN
+F 4 "C2012X7R1A106M125AC" V 6550 3750 50  0001 C CNN "Manfacturing #"
+	1    6550 3750
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR01
-U 1 1 5E2632C9
-P 9650 2600
-F 0 "#PWR01" H 9650 2350 50  0001 C CNN
-F 1 "GND" H 9655 2427 50  0000 C CNN
-F 2 "" H 9650 2600 50  0001 C CNN
-F 3 "" H 9650 2600 50  0001 C CNN
-	1    9650 2600
+L Device:C_Small C1
+U 1 1 5E374FC6
+P 2750 3400
+F 0 "C1" H 2550 3400 60  0000 L CNN
+F 1 "10μF" H 2450 3500 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2900 3040 60  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 2750 3400 60  0001 C CNN
+F 4 "CL10B106MQ8NRNC" V 2750 3400 50  0001 C CNN "Manfacturing #"
+	1    2750 3400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3950 3400 3850 3400
+Wire Wire Line
+	2750 3500 2750 3550
+Wire Wire Line
+	3950 3850 3850 3850
+Wire Wire Line
+	3850 3850 3850 3950
+$Comp
+L power:GND #PWR0104
+U 1 1 5E39C41C
+P 3850 4300
+F 0 "#PWR0104" H 3850 4050 50  0001 C CNN
+F 1 "GND" H 3855 4127 50  0000 C CNN
+F 2 "" H 3850 4300 50  0001 C CNN
+F 3 "" H 3850 4300 50  0001 C CNN
+	1    3850 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5E39C719
+P 4600 4400
+F 0 "#PWR0106" H 4600 4150 50  0001 C CNN
+F 1 "GND" H 4605 4227 50  0000 C CNN
+F 2 "" H 4600 4400 50  0001 C CNN
+F 3 "" H 4600 4400 50  0001 C CNN
+	1    4600 4400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9650 2450 9650 2600
+	3850 4250 3850 4300
 Wire Wire Line
-	9650 4150 9650 4300
+	4600 4350 4600 4400
 Wire Wire Line
-	9650 3400 9650 3550
+	5300 3350 5350 3350
 Wire Wire Line
-	5650 2350 5650 3300
-Text GLabel 10800 2350 2    50   Input ~ 0
-5V
-Text GLabel 10800 3300 2    50   Input ~ 0
+	5350 3350 5350 3300
+Wire Wire Line
+	5350 3250 5300 3250
+Wire Wire Line
+	5350 3300 5400 3300
+Wire Wire Line
+	5400 3300 5400 2850
+Wire Wire Line
+	5400 2850 4750 2850
+Connection ~ 5350 3300
+Wire Wire Line
+	5350 3300 5350 3250
+Wire Wire Line
+	5300 3550 5350 3550
+Wire Wire Line
+	5350 3550 5350 3650
+Wire Wire Line
+	5350 3650 5300 3650
+Wire Wire Line
+	5300 3850 5350 3850
+Wire Wire Line
+	5350 3850 5350 3650
+Connection ~ 5350 3650
+NoConn ~ 3950 3600
+NoConn ~ 5300 4000
+$Comp
+L power:GND #PWR0118
+U 1 1 5E3C21A0
+P 5650 3900
+F 0 "#PWR0118" H 5650 3650 50  0001 C CNN
+F 1 "GND" H 5655 3727 50  0000 C CNN
+F 2 "" H 5650 3900 50  0001 C CNN
+F 3 "" H 5650 3900 50  0001 C CNN
+	1    5650 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 5E3C21A6
+P 6100 3900
+F 0 "#PWR0120" H 6100 3650 50  0001 C CNN
+F 1 "GND" H 6105 3727 50  0000 C CNN
+F 2 "" H 6100 3900 50  0001 C CNN
+F 3 "" H 6100 3900 50  0001 C CNN
+	1    6100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5E3C21AC
+P 6550 3900
+F 0 "#PWR0121" H 6550 3650 50  0001 C CNN
+F 1 "GND" H 6555 3727 50  0000 C CNN
+F 2 "" H 6550 3900 50  0001 C CNN
+F 3 "" H 6550 3900 50  0001 C CNN
+	1    6550 3900
+	1    0    0    -1  
+$EndComp
+Connection ~ 5350 3550
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J3
+U 1 1 5E40F2B1
+P 9650 4250
+F 0 "J3" H 9700 4500 50  0000 C CNN
+F 1 "105430-1102" H 9700 4400 50  0000 C CNN
+F 2 "105430-1102:1054301102" H 10300 4350 50  0001 L CNN
+F 3 "https://www.molex.com/pdm_docs/sd/1054301102_sd.pdf" H 10300 4250 50  0001 L CNN
+F 4 "" H 9650 4250 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9650 4250 50  0001 C CNN "Allied_Number"
+F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 4250 50  0001 C CNN "Description"
+F 7 "" H 9650 4250 50  0001 C CNN "Height"
+F 8 "" H 9650 4250 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9650 4250 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9650 4250 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9650 4250 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9650 4250 50  0001 C CNN "Manfacturing #"
+	1    9650 4250
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 4300 8650 4300
+Wire Wire Line
+	9050 4300 9050 4350
+Wire Wire Line
+	9350 4250 9300 4250
+Wire Wire Line
+	9300 4250 9300 4300
+Wire Wire Line
+	9300 4350 9350 4350
+Wire Wire Line
+	9050 4300 9300 4300
+Connection ~ 9050 4300
+Connection ~ 9300 4300
+Wire Wire Line
+	9300 4300 9300 4350
+Wire Wire Line
+	8650 4350 8650 4300
+Connection ~ 8650 4300
+Wire Wire Line
+	8650 4300 9050 4300
+Wire Wire Line
+	9050 4550 9050 4600
+Wire Wire Line
+	9050 4600 8850 4600
+Wire Wire Line
+	8650 4600 8650 4550
+Wire Wire Line
+	8850 4600 8850 4650
+Connection ~ 8850 4600
+Wire Wire Line
+	8850 4600 8650 4600
+Wire Wire Line
+	9850 4250 9900 4250
+Wire Wire Line
+	9900 4250 9900 4300
+Wire Wire Line
+	9900 4350 9850 4350
+$Comp
+L power:GND #PWR0122
+U 1 1 5E437A36
+P 9950 4450
+F 0 "#PWR0122" H 9950 4200 50  0001 C CNN
+F 1 "GND" H 9955 4277 50  0000 C CNN
+F 2 "" H 9950 4450 50  0001 C CNN
+F 3 "" H 9950 4450 50  0001 C CNN
+	1    9950 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 4300 9950 4300
+Connection ~ 9900 4300
+Wire Wire Line
+	9900 4300 9900 4350
+$Comp
+L Device:C_Small C14
+U 1 1 5E43CF5D
+P 8650 3700
+F 0 "C14" H 8742 3746 50  0000 L CNN
+F 1 "0.1uF" H 8742 3655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8650 3700 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1003_C0G_SMD.pdf" H 8650 3700 50  0001 C CNN
+F 4 "" H 8650 3700 50  0001 C CNN "Allied Price/Stock"
+F 5 "	100pF ±5% 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)" H 8650 3700 50  0001 C CNN "Description"
+F 6 "" H 8650 3700 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 8650 3700 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 8650 3700 50  0001 C CNN "Mouser Price/Stock"
+F 9 "C0201C101J3GACTU" H 8650 3700 50  0001 C CNN "Manfacturing #"
+	1    8650 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C15
+U 1 1 5E43CF69
+P 9050 3700
+F 0 "C15" H 9142 3746 50  0000 L CNN
+F 1 "10uF" H 9142 3655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9050 3700 50  0001 C CNN
+F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A106KE69-01.pdf" H 9050 3700 50  0001 C CNN
+F 4 "" H 9050 3700 50  0001 C CNN "Allied Price/Stock"
+F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9050 3700 50  0001 C CNN "Description"
+F 6 "" H 9050 3700 50  0001 C CNN "Manufacturer_Name"
+F 7 "" H 9050 3700 50  0001 C CNN "Manufacturer_Part_Number"
+F 8 "" H 9050 3700 50  0001 C CNN "Mouser Price/Stock"
+F 9 "GRM188R61A106KE69J" H 9050 3700 50  0001 C CNN "Manfacturing #"
+	1    9050 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 5E43CF6F
+P 8850 3900
+F 0 "#PWR0123" H 8850 3650 50  0001 C CNN
+F 1 "GND" H 8855 3727 50  0000 C CNN
+F 2 "" H 8850 3900 50  0001 C CNN
+F 3 "" H 8850 3900 50  0001 C CNN
+	1    8850 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x02_Odd_Even J2
+U 1 1 5E43CF7F
+P 9650 3500
+F 0 "J2" H 9700 3750 50  0000 C CNN
+F 1 "105430-1102" H 9700 3650 50  0000 C CNN
+F 2 "105430-1102:1054301102" H 10300 3600 50  0001 L CNN
+F 3 "https://www.molex.com/pdm_docs/sd/1054301102_sd.pdf" H 10300 3500 50  0001 L CNN
+F 4 "" H 9650 3500 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9650 3500 50  0001 C CNN "Allied_Number"
+F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 3500 50  0001 C CNN "Description"
+F 7 "" H 9650 3500 50  0001 C CNN "Height"
+F 8 "" H 9650 3500 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9650 3500 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9650 3500 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9650 3500 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9650 3500 50  0001 C CNN "Manfacturing #"
+	1    9650 3500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 3550 8650 3550
+Wire Wire Line
+	9050 3550 9050 3600
+Wire Wire Line
+	9350 3500 9300 3500
+Wire Wire Line
+	9300 3500 9300 3550
+Wire Wire Line
+	9300 3600 9350 3600
+Wire Wire Line
+	9050 3550 9300 3550
+Connection ~ 9050 3550
+Connection ~ 9300 3550
+Wire Wire Line
+	9300 3550 9300 3600
+Wire Wire Line
+	8650 3600 8650 3550
+Connection ~ 8650 3550
+Wire Wire Line
+	8650 3550 9050 3550
+Wire Wire Line
+	9050 3800 9050 3850
+Wire Wire Line
+	9050 3850 8850 3850
+Wire Wire Line
+	8650 3850 8650 3800
+Wire Wire Line
+	8850 3850 8850 3900
+Connection ~ 8850 3850
+Wire Wire Line
+	8850 3850 8650 3850
+Wire Wire Line
+	9850 3500 9900 3500
+Wire Wire Line
+	9900 3500 9900 3550
+Wire Wire Line
+	9900 3600 9850 3600
+$Comp
+L power:GND #PWR0124
+U 1 1 5E43CF9A
+P 9950 3700
+F 0 "#PWR0124" H 9950 3450 50  0001 C CNN
+F 1 "GND" H 9955 3527 50  0000 C CNN
+F 2 "" H 9950 3700 50  0001 C CNN
+F 3 "" H 9950 3700 50  0001 C CNN
+	1    9950 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3550 9950 3550
+Connection ~ 9900 3550
+Wire Wire Line
+	9900 3550 9900 3600
+Text Label 8800 3550 0    50   ~ 0
 3.3V
-Text GLabel 10800 4050 2    50   Input ~ 0
+Text Label 8800 4300 0    50   ~ 0
 1.8V
+Wire Wire Line
+	9950 4300 9950 4450
+Wire Wire Line
+	9950 3550 9950 3700
+Text Label 6350 3550 0    50   ~ 0
+5.0V
 $Comp
-L power:GND #PWR05
-U 1 1 5E28008A
-P 10450 3550
-F 0 "#PWR05" H 10450 3300 50  0001 C CNN
-F 1 "GND" H 10455 3377 50  0000 C CNN
-F 2 "" H 10450 3550 50  0001 C CNN
-F 3 "" H 10450 3550 50  0001 C CNN
-	1    10450 3550
+L Device:C_Small C9
+U 1 1 5E46F0A9
+P 6100 3750
+F 0 "C9" H 6200 3800 60  0000 L CNN
+F 1 "10uF" H 6200 3700 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6250 3390 60  0001 C CNN
+F 3 "" H 6100 3750 60  0001 C CNN
+F 4 "C2012X7R1A106M125AC" V 6100 3750 50  0001 C CNN "Manfacturing #"
+	1    6100 3750
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR06
-U 1 1 5E280799
-P 10450 4300
-F 0 "#PWR06" H 10450 4050 50  0001 C CNN
-F 1 "GND" H 10455 4127 50  0000 C CNN
-F 2 "" H 10450 4300 50  0001 C CNN
-F 3 "" H 10450 4300 50  0001 C CNN
-	1    10450 4300
+L Device:C_Small C7
+U 1 1 5E46F450
+P 5650 3750
+F 0 "C7" H 5750 3800 60  0000 L CNN
+F 1 "10uF" H 5750 3700 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 3390 60  0001 C CNN
+F 3 "" H 5650 3750 60  0001 C CNN
+F 4 "C2012X7R1A106M125AC" V 5650 3750 50  0001 C CNN "Manfacturing #"
+	1    5650 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3850 5650 3900
+Wire Wire Line
+	6100 3900 6100 3850
+Wire Wire Line
+	6550 3850 6550 3900
+Wire Wire Line
+	6550 3650 6550 3550
+Wire Wire Line
+	5350 3550 5650 3550
+Wire Wire Line
+	5650 3650 5650 3550
+Connection ~ 5650 3550
+Wire Wire Line
+	5650 3550 6100 3550
+Wire Wire Line
+	6100 3650 6100 3550
+Connection ~ 6100 3550
+Wire Wire Line
+	6100 3550 6550 3550
+Wire Wire Line
+	7400 3850 7400 3900
+Wire Wire Line
+	6550 3550 7000 3550
+Connection ~ 6550 3550
+Wire Wire Line
+	7400 3650 7400 3550
+Connection ~ 7400 3550
+Wire Wire Line
+	7400 3550 7500 3550
+$Comp
+L power:GND #PWR0125
+U 1 1 5E49FDF3
+P 3150 3550
+F 0 "#PWR0125" H 3150 3300 50  0001 C CNN
+F 1 "GND" H 3155 3377 50  0000 C CNN
+F 2 "" H 3150 3550 50  0001 C CNN
+F 3 "" H 3150 3550 50  0001 C CNN
+	1    3150 3550
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR04
-U 1 1 5E2810CF
-P 10450 2600
-F 0 "#PWR04" H 10450 2350 50  0001 C CNN
-F 1 "GND" H 10455 2427 50  0000 C CNN
-F 2 "" H 10450 2600 50  0001 C CNN
-F 3 "" H 10450 2600 50  0001 C CNN
-	1    10450 2600
-	1    0    0    -1  
+L Device:C_Small C3
+U 1 1 5E49FDFA
+P 3150 3400
+F 0 "C3" H 2950 3400 60  0000 L CNN
+F 1 "10μF" H 2850 3500 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3300 3040 60  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 3150 3400 60  0001 C CNN
+F 4 "CL10B106MQ8NRNC" V 3150 3400 50  0001 C CNN "Manfacturing #"
+	1    3150 3400
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	10450 2450 10450 2600
-Wire Wire Line
-	10450 3400 10450 3550
-Wire Wire Line
-	10450 4150 10450 4300
+	3150 3500 3150 3550
 $Comp
-L power:GND #PWR02
-U 1 1 5E25FF35
-P 9650 3550
-F 0 "#PWR02" H 9650 3300 50  0001 C CNN
-F 1 "GND" H 9655 3377 50  0000 C CNN
-F 2 "" H 9650 3550 50  0001 C CNN
-F 3 "" H 9650 3550 50  0001 C CNN
-	1    9650 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10450 3300 10800 3300
-Wire Wire Line
-	10450 4050 10800 4050
-Wire Wire Line
-	10450 2350 10800 2350
-Wire Wire Line
-	9650 2350 5650 2350
-Wire Wire Line
-	9650 3300 9100 3300
-Connection ~ 9100 3300
-Wire Wire Line
-	9650 4050 9100 4050
-Connection ~ 9100 4050
-Wire Wire Line
-	4550 3950 5050 3950
-Wire Wire Line
-	5050 3950 5050 3650
-Connection ~ 5050 3650
-$Comp
-L MOLEX_Connector_105430:105430-1102 J1
-U 1 1 5E264EDD
-P 9650 2350
-F 0 "J1" H 10050 2615 50  0000 C CNN
-F 1 "105430-1102" H 10050 2524 50  0000 C CNN
-F 2 "105430-1102:1054301102" H 10300 2450 50  0001 L CNN
-F 3 "https://componentsearchengine.com/Datasheets/2/105430-1102.pdf" H 10300 2350 50  0001 L CNN
-F 4 "" H 9650 2350 50  0001 C CNN "Allied Price/Stock"
-F 5 "" H 9650 2350 50  0001 C CNN "Allied_Number"
-F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 2350 50  0001 C CNN "Description"
-F 7 "" H 9650 2350 50  0001 C CNN "Height"
-F 8 "" H 9650 2350 50  0001 C CNN "Manufacturer_Name"
-F 9 "" H 9650 2350 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "" H 9650 2350 50  0001 C CNN "Mouser Part Number"
-F 11 "" H 9650 2350 50  0001 C CNN "Mouser Price/Stock"
-F 12 "105430-1102" H 9650 2350 50  0001 C CNN "Manfacturing #"
-	1    9650 2350
+L power:GND #PWR0126
+U 1 1 5E4AA3EA
+P 3550 3550
+F 0 "#PWR0126" H 3550 3300 50  0001 C CNN
+F 1 "GND" H 3555 3377 50  0000 C CNN
+F 2 "" H 3550 3550 50  0001 C CNN
+F 3 "" H 3550 3550 50  0001 C CNN
+	1    3550 3550
 	1    0    0    -1  
 $EndComp
 $Comp
-L MOLEX_Connector_105430:105430-1102 J2
-U 1 1 5E2656E1
-P 9650 3300
-F 0 "J2" H 10050 3565 50  0000 C CNN
-F 1 "105430-1102" H 10050 3474 50  0000 C CNN
-F 2 "105430-1102:1054301102" H 10300 3400 50  0001 L CNN
-F 3 "https://componentsearchengine.com/Datasheets/2/105430-1102.pdf" H 10300 3300 50  0001 L CNN
-F 4 "" H 9650 3300 50  0001 C CNN "Allied Price/Stock"
-F 5 "" H 9650 3300 50  0001 C CNN "Allied_Number"
-F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 3300 50  0001 C CNN "Description"
-F 7 "" H 9650 3300 50  0001 C CNN "Height"
-F 8 "" H 9650 3300 50  0001 C CNN "Manufacturer_Name"
-F 9 "" H 9650 3300 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "" H 9650 3300 50  0001 C CNN "Mouser Part Number"
-F 11 "" H 9650 3300 50  0001 C CNN "Mouser Price/Stock"
-F 12 "105430-1102" H 9650 3300 50  0001 C CNN "Manfacturing #"
-	1    9650 3300
-	1    0    0    -1  
+L Device:C_Small C5
+U 1 1 5E4AA3F1
+P 3550 3400
+F 0 "C5" H 3350 3400 60  0000 L CNN
+F 1 "10μF" H 3250 3500 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3700 3040 60  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 3550 3400 60  0001 C CNN
+F 4 "CL10B106MQ8NRNC" V 3550 3400 50  0001 C CNN "Manfacturing #"
+	1    3550 3400
+	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	3550 3300 3550 3250
 $Comp
-L MOLEX_Connector_105430:105430-1102 J3
-U 1 1 5E265BFA
-P 9650 4050
-F 0 "J3" H 10050 4315 50  0000 C CNN
-F 1 "105430-1102" H 10050 4224 50  0000 C CNN
-F 2 "105430-1102:1054301102" H 10300 4150 50  0001 L CNN
-F 3 "https://componentsearchengine.com/Datasheets/2/105430-1102.pdf" H 10300 4050 50  0001 L CNN
-F 4 "" H 9650 4050 50  0001 C CNN "Allied Price/Stock"
-F 5 "" H 9650 4050 50  0001 C CNN "Allied_Number"
-F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 4050 50  0001 C CNN "Description"
-F 7 "" H 9650 4050 50  0001 C CNN "Height"
-F 8 "" H 9650 4050 50  0001 C CNN "Manufacturer_Name"
-F 9 "" H 9650 4050 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "" H 9650 4050 50  0001 C CNN "Mouser Part Number"
-F 11 "" H 9650 4050 50  0001 C CNN "Mouser Price/Stock"
-F 12 "105430-1102" H 9650 4050 50  0001 C CNN "Manfacturing #"
-	1    9650 4050
+L Connector_Generic:Conn_02x02_Odd_Even J1
+U 1 1 5E4C441F
+P 9600 2750
+F 0 "J1" H 9650 3000 50  0000 C CNN
+F 1 "105430-1102" H 9650 2900 50  0000 C CNN
+F 2 "105430-1102:1054301102" H 10250 2850 50  0001 L CNN
+F 3 "https://www.molex.com/pdm_docs/sd/1054301102_sd.pdf" H 10250 2750 50  0001 L CNN
+F 4 "" H 9600 2750 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9600 2750 50  0001 C CNN "Allied_Number"
+F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9600 2750 50  0001 C CNN "Description"
+F 7 "" H 9600 2750 50  0001 C CNN "Height"
+F 8 "" H 9600 2750 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9600 2750 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9600 2750 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9600 2750 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9600 2750 50  0001 C CNN "Manfacturing #"
+	1    9600 2750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 2750 9250 2750
+Wire Wire Line
+	9250 2750 9250 2800
+Wire Wire Line
+	9250 2850 9300 2850
+Connection ~ 9250 2800
+Wire Wire Line
+	9250 2800 9250 2850
+Wire Wire Line
+	9800 2750 9850 2750
+Wire Wire Line
+	9850 2750 9850 2800
+Wire Wire Line
+	9850 2850 9800 2850
+$Comp
+L power:GND #PWR0127
+U 1 1 5E4C442E
+P 9900 2950
+F 0 "#PWR0127" H 9900 2700 50  0001 C CNN
+F 1 "GND" H 9905 2777 50  0000 C CNN
+F 2 "" H 9900 2950 50  0001 C CNN
+F 3 "" H 9900 2950 50  0001 C CNN
+	1    9900 2950
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	9850 2800 9900 2800
+Connection ~ 9850 2800
+Wire Wire Line
+	9850 2800 9850 2850
+Wire Wire Line
+	9900 2800 9900 2950
+Wire Wire Line
+	7000 2800 7000 3550
+Wire Wire Line
+	7000 2800 9250 2800
+Connection ~ 7000 3550
+Wire Wire Line
+	7000 3550 7400 3550
+Wire Wire Line
+	3550 3500 3550 3550
+Connection ~ 3550 3250
+Wire Wire Line
+	3150 3250 3550 3250
+Wire Wire Line
+	3150 3300 3150 3250
+Connection ~ 3150 3250
+Wire Wire Line
+	2750 3250 3150 3250
+Wire Wire Line
+	2750 3300 2750 3250
+Wire Wire Line
+	3850 3250 3900 3250
+Connection ~ 3850 3250
+Wire Wire Line
+	3850 3400 3850 3250
+Connection ~ 2750 3250
+Wire Wire Line
+	1950 3250 2750 3250
+Text Label 2250 3250 0    50   ~ 0
+Voutbat
+Wire Wire Line
+	7500 4200 7450 4200
+Wire Wire Line
+	7450 4200 7450 4300
+Wire Wire Line
+	7450 4300 7500 4300
+Wire Wire Line
+	7450 4300 7450 4550
+Connection ~ 7450 4300
+Text Notes 3250 5000 0    50   ~ 0
+PG Can be tied to a pull up resistor and measure its value if the output drops
+Wire Wire Line
+	3900 3250 3900 2850
+Connection ~ 3900 3250
+Wire Wire Line
+	3900 3250 3950 3250
+Wire Wire Line
+	3900 2850 4450 2850
+Wire Wire Line
+	3550 3250 3850 3250
 $EndSCHEMATC

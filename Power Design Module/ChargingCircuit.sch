@@ -15,28 +15,11 @@ Comment4 ""
 $EndDescr
 Text HLabel 7600 2850 2    50   Input ~ 0
 Voutbat
-Text HLabel 7500 4050 2    50   Input ~ 0
-GND
 $Comp
-L power:GND #PWR0106
-U 1 1 5E251990
-P 7250 4150
-F 0 "#PWR0106" H 7250 3900 50  0001 C CNN
-F 1 "GND" H 7255 3977 50  0000 C CNN
-F 2 "" H 7250 4150 50  0001 C CNN
-F 3 "" H 7250 4150 50  0001 C CNN
-	1    7250 4150
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7500 4050 7250 4050
-Wire Wire Line
-	7250 4050 7250 4150
-$Comp
-L BQ24072TRGTR:BQ24072TRGTR U?
+L BQ24072TRGTR:BQ24072TRGTR U3
 U 1 1 5E266BAD
 P 4600 2500
-F 0 "U?" H 5700 2700 60  0000 C CNN
+F 0 "U3" H 5700 2700 60  0000 C CNN
 F 1 "BQ24072TRGTR" H 5250 1600 60  0000 C CNN
 F 2 "BQ24072TRGTR:BQ24072TRGTR" H 5900 2900 60  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/slus937c/slus937c.pdf" H 4600 2500 60  0001 C CNN
@@ -44,10 +27,10 @@ F 3 "http://www.ti.com/lit/ds/slus937c/slus937c.pdf" H 4600 2500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:LED_Small_ALT D?
+L Device:LED_Small_ALT D2
 U 1 1 5E267CDB
 P 5600 2000
-F 0 "D?" H 5600 1900 50  0000 C CNN
+F 0 "D2" H 5600 1900 50  0000 C CNN
 F 1 "Green" H 5600 2144 50  0000 C CNN
 F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5600 2000 50  0001 C CNN
 F 3 "https://www.mouser.com/datasheet/2/348/smld12-e-1510650.pdf" V 5600 2000 50  0001 C CNN
@@ -56,21 +39,21 @@ F 4 "SMLD12EN1WT86" H 5600 2000 50  0001 C CNN "Manfacturing #"
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:Jumper_3_Open JP?
+L Jumper:Jumper_3_Open JP2
 U 1 1 5E268285
 P 7300 2850
-F 0 "JP?" V 7346 2937 50  0000 L CNN
-F 1 "Charger / Battery Bypass" V 7150 1750 50  0000 L CNN
+F 0 "JP2" V 7346 2937 50  0000 L CNN
+F 1 "Charger / Battery Bypass" V 7450 1750 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 7300 2850 50  0001 C CNN
 F 3 "~" H 7300 2850 50  0001 C CNN
 	1    7300 2850
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Open JP?
+L Jumper:SolderJumper_2_Open JP1
 U 1 1 5E268A70
 P 3300 3200
-F 0 "JP?" V 3254 3268 50  0000 L CNN
+F 0 "JP1" V 3254 3268 50  0000 L CNN
 F 1 "TMR OFF" V 3345 3268 50  0000 L CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3300 3200 50  0001 C CNN
 F 3 "~" H 3300 3200 50  0001 C CNN
@@ -78,21 +61,22 @@ F 3 "~" H 3300 3200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:USB_B_Micro J?
+L Connector:USB_B_Micro J4
 U 1 1 5E268F4D
 P 2200 2500
-F 0 "J?" H 2257 2967 50  0000 C CNN
+F 0 "J4" H 2257 2967 50  0000 C CNN
 F 1 "USB_B_Micro" H 2257 2876 50  0000 C CNN
 F 2 "Connector_USB:USB_Micro-B_Molex-105017-0001" H 2350 2450 50  0001 C CNN
 F 3 "~" H 2350 2450 50  0001 C CNN
+F 4 "105017-0001" H 2200 2500 50  0001 C CNN "Manfacturing #"
 	1    2200 2500
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C?
+L Device:C_Small C11
 U 1 1 5E26A6C2
 P 6500 2750
-F 0 "C?" H 6592 2796 50  0000 L CNN
+F 0 "C11" H 6592 2796 50  0000 L CNN
 F 1 "4.7uF" H 6592 2705 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6500 2750 50  0001 C CNN
 F 3 "~" H 6500 2750 50  0001 C CNN
@@ -101,10 +85,10 @@ F 4 "C0805C475K4RAC7210" H 6500 2750 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R2
 U 1 1 5E26AD79
 P 3850 3200
-F 0 "R?" H 3918 3246 50  0000 L CNN
+F 0 "R2" H 3918 3246 50  0000 L CNN
 F 1 "2K" H 3918 3155 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3850 3200 50  0001 C CNN
 F 3 "~" H 3850 3200 50  0001 C CNN
@@ -113,10 +97,10 @@ F 4 "RN73R1JTTD2001B25" H 3850 3200 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R6
 U 1 1 5E26B032
 P 6150 3550
-F 0 "R?" H 6218 3596 50  0000 L CNN
+F 0 "R6" H 6218 3596 50  0000 L CNN
 F 1 "200k" H 6218 3505 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6150 3550 50  0001 C CNN
 F 3 "~" H 6150 3550 50  0001 C CNN
@@ -125,10 +109,10 @@ F 4 "RN73R1JTTD2003B25" H 6150 3550 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R3
 U 1 1 5E26B313
 P 5000 4650
-F 0 "R?" H 5068 4696 50  0000 L CNN
+F 0 "R3" H 5068 4696 50  0000 L CNN
 F 1 "1.78k" H 5068 4605 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5000 4650 50  0001 C CNN
 F 3 "~" H 5000 4650 50  0001 C CNN
@@ -137,10 +121,10 @@ F 4 "RC0805FR-101K78L" H 5000 4650 50  0001 C CNN "Manfacturing #"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R7
 U 1 1 5E2716A5
 P 6150 3900
-F 0 "R?" H 6218 3946 50  0000 L CNN
+F 0 "R7" H 6218 3946 50  0000 L CNN
 F 1 "49.9k" H 6218 3855 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6150 3900 50  0001 C CNN
 F 3 "~" H 6150 3900 50  0001 C CNN
@@ -149,10 +133,10 @@ F 4 "CRCW060349K9FKEAC" H 6150 3900 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:LED_Small_ALT D?
+L Device:LED_Small_ALT D1
 U 1 1 5E273FF3
 P 5600 1750
-F 0 "D?" H 5600 1985 50  0000 C CNN
+F 0 "D1" H 5600 1985 50  0000 C CNN
 F 1 "Red" H 5600 1894 50  0000 C CNN
 F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5600 1750 50  0001 C CNN
 F 3 "https://www.mouser.com/datasheet/2/348/smld12-e-1510650.pdf" V 5600 1750 50  0001 C CNN
@@ -161,10 +145,10 @@ F 4 "599-0110-007F" H 5600 1750 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R4
 U 1 1 5E274247
 P 6050 1750
-F 0 "R?" V 5845 1750 50  0000 C CNN
+F 0 "R4" V 5845 1750 50  0000 C CNN
 F 1 "530R" V 5936 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6050 1750 50  0001 C CNN
 F 3 "~" H 6050 1750 50  0001 C CNN
@@ -173,10 +157,10 @@ F 4 "RN731JTTD5300F100" H 6050 1750 50  0001 C CNN "Manfacturing #"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R5
 U 1 1 5E2748E6
 P 6050 2000
-F 0 "R?" V 5845 2000 50  0000 C CNN
+F 0 "R5" V 5845 2000 50  0000 C CNN
 F 1 "320R" V 5936 2000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6050 2000 50  0001 C CNN
 F 3 "~" H 6050 2000 50  0001 C CNN
@@ -217,10 +201,10 @@ Connection ~ 6250 2000
 Wire Wire Line
 	6250 2000 6250 1750
 $Comp
-L Connector_Generic:Conn_01x02 J?
+L Connector_Generic:Conn_01x02 J5
 U 1 1 5E2791AB
 P 8700 3150
-F 0 "J?" H 8780 3142 50  0000 L CNN
+F 0 "J5" H 8780 3142 50  0000 L CNN
 F 1 "Battery Output" H 8780 3051 50  0000 L CNN
 F 2 "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal" H 8700 3150 50  0001 C CNN
 F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 8700 3150 50  0001 C CNN
@@ -367,27 +351,28 @@ Connection ~ 4000 2300
 Text GLabel 6200 3350 2    50   UnSpc ~ 0
 Vbus
 $Comp
-L Switch:SW_DIP_x02 SW?
+L Switch:SW_DIP_x02 SW2
 U 1 1 5E2D5AAA
 P 9050 1900
-F 0 "SW?" V 9004 2130 50  0000 L CNN
+F 0 "SW2" V 9004 2130 50  0000 L CNN
 F 1 "Input Current Selection" V 9095 2130 50  0000 L CNN
-F 2 "" H 9050 1900 50  0001 C CNN
+F 2 "Button_Switch_SMD:SW_DIP_SPSTx02_Slide_Copal_CHS-02B_W7.62mm_P1.27mm" H 9050 1900 50  0001 C CNN
 F 3 "~" H 9050 1900 50  0001 C CNN
+F 4 "CVS-02TB" H 9050 1900 50  0001 C CNN "Manfacturing #"
 	1    9050 1900
 	0    1    1    0   
 $EndComp
-Text GLabel 9150 1000 2    50   UnSpc ~ 0
+Text GLabel 9150 1000 2    50   Input ~ 0
 Vout
 Text GLabel 8950 1500 0    50   UnSpc ~ 0
 EN1
 Text GLabel 9250 1500 2    50   UnSpc ~ 0
 EN2
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R9
 U 1 1 5E2E11CE
 P 9050 1300
-F 0 "R?" H 8982 1254 50  0000 R CNN
+F 0 "R9" H 8982 1254 50  0000 R CNN
 F 1 "10k" H 8982 1345 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9050 1300 50  0001 C CNN
 F 3 "~" H 9050 1300 50  0001 C CNN
@@ -396,10 +381,10 @@ F 4 "SG73G1JTTD1002D" H 9050 1300 50  0001 C CNN "Manfacturing #"
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R10
 U 1 1 5E2E2CB5
 P 9150 1300
-F 0 "R?" H 9218 1346 50  0000 L CNN
+F 0 "R10" H 9218 1346 50  0000 L CNN
 F 1 "10k" H 9218 1255 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9150 1300 50  0001 C CNN
 F 3 "~" H 9150 1300 50  0001 C CNN
@@ -462,8 +447,6 @@ Text Notes 9600 1050 0    50   ~ 10
 EN2    EN1     Iin
 Text Label 8050 3150 0    50   ~ 0
 BATT+
-Text Label 7100 2550 0    50   ~ 0
-Vout
 $Comp
 L power:GND #PWR0115
 U 1 1 5E27562F
@@ -551,45 +534,6 @@ Wire Wire Line
 Connection ~ 5550 4550
 Wire Wire Line
 	5550 4550 5550 4600
-$Comp
-L Device:LED_Small_ALT D?
-U 1 1 5E26DCA9
-P 7600 1750
-F 0 "D?" H 7600 1650 50  0000 C CNN
-F 1 "Green" H 7600 1894 50  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7600 1750 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/348/smld12-e-1510650.pdf" V 7600 1750 50  0001 C CNN
-F 4 "SMLD12EN1WT86" H 7600 1750 50  0001 C CNN "Manfacturing #"
-	1    7600 1750
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:R_Small_US R?
-U 1 1 5E275A1E
-P 7600 2050
-F 0 "R?" H 7700 2000 50  0000 C CNN
-F 1 "320R" H 7750 2100 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7600 2050 50  0001 C CNN
-F 3 "~" H 7600 2050 50  0001 C CNN
-F 4 "RT0603DRE07320RL" H 7600 2050 50  0001 C CNN "Manfacturing #"
-	1    7600 2050
-	1    0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR0120
-U 1 1 5E2763EE
-P 7600 2200
-F 0 "#PWR0120" H 7600 1950 50  0001 C CNN
-F 1 "GND" H 7605 2027 50  0000 C CNN
-F 2 "" H 7600 2200 50  0001 C CNN
-F 3 "" H 7600 2200 50  0001 C CNN
-	1    7600 2200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7600 1850 7600 1950
-Wire Wire Line
-	7600 2150 7600 2200
 Text Notes 9600 950  0    50   ~ 10
 Input Current Limit
 NoConn ~ 2500 2500
@@ -599,13 +543,14 @@ Wire Wire Line
 Text Label 2900 2300 0    50   ~ 0
 Vbus
 $Comp
-L Switch:SW_DIP_x01 SW?
+L Switch:SW_DIP_x01 SW1
 U 1 1 5E2C2193
 P 3100 4200
-F 0 "SW?" V 3146 4070 50  0000 R CNN
+F 0 "SW1" V 3146 4070 50  0000 R CNN
 F 1 "Charge Disable Switch" V 2850 4100 50  0000 R CNN
-F 2 "" H 3100 4200 50  0001 C CNN
+F 2 "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_Copal_CVS-01xB_W5.9mm_P1mm" H 3100 4200 50  0001 C CNN
 F 3 "~" H 3100 4200 50  0001 C CNN
+F 4 "CVS-01TB" H 3100 4200 50  0001 C CNN "Manfacturing #"
 	1    3100 4200
 	0    -1   -1   0   
 $EndComp
@@ -626,12 +571,6 @@ Wire Wire Line
 	3050 3850 3100 3850
 Wire Wire Line
 	3100 3850 3100 3900
-Text GLabel 7650 1550 2    50   UnSpc ~ 0
-Vout
-Wire Wire Line
-	7600 1650 7600 1550
-Wire Wire Line
-	7600 1550 7650 1550
 Text Notes 1750 4300 0    50   ~ 0
 Switch is normaly open.\nTurn to ON to Disable Charge
 Text Notes 950  6400 0    50   ~ 0
@@ -639,10 +578,10 @@ Text Notes 950  6400 0    50   ~ 0
 Wire Wire Line
 	5000 4450 5000 4550
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R1
 U 1 1 5E2BBF23
 P 3100 4750
-F 0 "R?" H 3168 4796 50  0000 L CNN
+F 0 "R1" H 3168 4796 50  0000 L CNN
 F 1 "2K" H 3168 4705 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3100 4750 50  0001 C CNN
 F 3 "~" H 3100 4750 50  0001 C CNN
@@ -664,10 +603,10 @@ F 3 "" H 4000 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C?
+L Device:C_Small C10
 U 1 1 5E2837DF
 P 4000 2450
-F 0 "C?" H 4092 2496 50  0000 L CNN
+F 0 "C10" H 4092 2496 50  0000 L CNN
 F 1 "1uF" H 4092 2405 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4000 2450 50  0001 C CNN
 F 3 "~" H 4000 2450 50  0001 C CNN
@@ -676,10 +615,10 @@ F 4 "C0805C105K4RAC7210" H 4000 2450 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C?
+L Device:C_Small C12
 U 1 1 5E2D0032
 P 7950 3300
-F 0 "C?" H 8042 3346 50  0000 L CNN
+F 0 "C12" H 8042 3346 50  0000 L CNN
 F 1 "4.7uF" H 8042 3255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7950 3300 50  0001 C CNN
 F 3 "~" H 7950 3300 50  0001 C CNN
@@ -688,10 +627,10 @@ F 4 "C0805C475K4RAC7210" H 7950 3300 50  0001 C CNN "Manfacturing #"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR07
 U 1 1 5E2D0038
 P 7950 3450
-F 0 "#PWR?" H 7950 3200 50  0001 C CNN
+F 0 "#PWR07" H 7950 3200 50  0001 C CNN
 F 1 "GND" H 7955 3277 50  0000 C CNN
 F 2 "" H 7950 3450 50  0001 C CNN
 F 3 "" H 7950 3450 50  0001 C CNN
@@ -705,4 +644,9 @@ Wire Wire Line
 Connection ~ 7950 3150
 Wire Wire Line
 	7950 3150 8500 3150
+Text GLabel 7450 2550 2    50   Output ~ 0
+Vout
+Wire Wire Line
+	7300 2550 7450 2550
+Connection ~ 7300 2550
 $EndSCHEMATC
