@@ -94,7 +94,7 @@ F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9050 4450 50  0
 F 6 "" H 9050 4450 50  0001 C CNN "Manufacturer_Name"
 F 7 "" H 9050 4450 50  0001 C CNN "Manufacturer_Part_Number"
 F 8 "" H 9050 4450 50  0001 C CNN "Mouser Price/Stock"
-F 9 "GRM188R61A106KE69J" H 9050 4450 50  0001 C CNN "Manfacturing #"
+F 9 "GRM188R61A106KE69D" H 9050 4450 50  0001 C CNN "Manfacturing #"
 	1    9050 4450
 	1    0    0    -1  
 $EndComp
@@ -283,26 +283,6 @@ F 3 "" H 6550 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5350 3550
-$Comp
-L Connector_Generic:Conn_02x02_Odd_Even J3
-U 1 1 5E40F2B1
-P 9650 4250
-F 0 "J3" H 9700 4500 50  0000 C CNN
-F 1 "105430-1102" H 9700 4400 50  0000 C CNN
-F 2 "105430-1102:1054301102" H 10300 4350 50  0001 L CNN
-F 3 "https://www.molex.com/pdm_docs/sd/1054301102_sd.pdf" H 10300 4250 50  0001 L CNN
-F 4 "" H 9650 4250 50  0001 C CNN "Allied Price/Stock"
-F 5 "" H 9650 4250 50  0001 C CNN "Allied_Number"
-F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 4250 50  0001 C CNN "Description"
-F 7 "" H 9650 4250 50  0001 C CNN "Height"
-F 8 "" H 9650 4250 50  0001 C CNN "Manufacturer_Name"
-F 9 "" H 9650 4250 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "" H 9650 4250 50  0001 C CNN "Mouser Part Number"
-F 11 "" H 9650 4250 50  0001 C CNN "Mouser Price/Stock"
-F 12 "105430-1102" H 9650 4250 50  0001 C CNN "Manfacturing #"
-	1    9650 4250
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	8550 4300 8650 4300
 Wire Wire Line
@@ -387,7 +367,7 @@ F 5 "10µF ±10% 10V Ceramic Capacitor X5R 0603 (1608 Metric)" H 9050 3700 50  0
 F 6 "" H 9050 3700 50  0001 C CNN "Manufacturer_Name"
 F 7 "" H 9050 3700 50  0001 C CNN "Manufacturer_Part_Number"
 F 8 "" H 9050 3700 50  0001 C CNN "Mouser Price/Stock"
-F 9 "GRM188R61A106KE69J" H 9050 3700 50  0001 C CNN "Manfacturing #"
+F 9 "GRM188R61A106KE69D" H 9050 3700 50  0001 C CNN "Manfacturing #"
 	1    9050 3700
 	1    0    0    -1  
 $EndComp
@@ -401,26 +381,6 @@ F 2 "" H 8850 3900 50  0001 C CNN
 F 3 "" H 8850 3900 50  0001 C CNN
 	1    8850 3900
 	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_02x02_Odd_Even J2
-U 1 1 5E43CF7F
-P 9650 3500
-F 0 "J2" H 9700 3750 50  0000 C CNN
-F 1 "105430-1102" H 9700 3650 50  0000 C CNN
-F 2 "105430-1102:1054301102" H 10300 3600 50  0001 L CNN
-F 3 "https://www.molex.com/pdm_docs/sd/1054301102_sd.pdf" H 10300 3500 50  0001 L CNN
-F 4 "" H 9650 3500 50  0001 C CNN "Allied Price/Stock"
-F 5 "" H 9650 3500 50  0001 C CNN "Allied_Number"
-F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9650 3500 50  0001 C CNN "Description"
-F 7 "" H 9650 3500 50  0001 C CNN "Height"
-F 8 "" H 9650 3500 50  0001 C CNN "Manufacturer_Name"
-F 9 "" H 9650 3500 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "" H 9650 3500 50  0001 C CNN "Mouser Part Number"
-F 11 "" H 9650 3500 50  0001 C CNN "Mouser Price/Stock"
-F 12 "105430-1102" H 9650 3500 50  0001 C CNN "Manfacturing #"
-	1    9650 3500
-	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	8550 3550 8650 3550
@@ -591,62 +551,51 @@ $EndComp
 Wire Wire Line
 	3550 3300 3550 3250
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J1
+L Connector_Generic:Conn_02x02_Counter_Clockwise J1
 U 1 1 5E4C441F
-P 9600 2750
-F 0 "J1" H 9650 3000 50  0000 C CNN
-F 1 "105430-1102" H 9650 2900 50  0000 C CNN
-F 2 "105430-1102:1054301102" H 10250 2850 50  0001 L CNN
-F 3 "https://www.molex.com/pdm_docs/sd/1054301102_sd.pdf" H 10250 2750 50  0001 L CNN
-F 4 "" H 9600 2750 50  0001 C CNN "Allied Price/Stock"
-F 5 "" H 9600 2750 50  0001 C CNN "Allied_Number"
-F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9600 2750 50  0001 C CNN "Description"
-F 7 "" H 9600 2750 50  0001 C CNN "Height"
-F 8 "" H 9600 2750 50  0001 C CNN "Manufacturer_Name"
-F 9 "" H 9600 2750 50  0001 C CNN "Manufacturer_Part_Number"
-F 10 "" H 9600 2750 50  0001 C CNN "Mouser Part Number"
-F 11 "" H 9600 2750 50  0001 C CNN "Mouser Price/Stock"
-F 12 "105430-1102" H 9600 2750 50  0001 C CNN "Manfacturing #"
-	1    9600 2750
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	9300 2750 9250 2750
-Wire Wire Line
-	9250 2750 9250 2800
-Wire Wire Line
-	9250 2850 9300 2850
-Connection ~ 9250 2800
-Wire Wire Line
-	9250 2800 9250 2850
-Wire Wire Line
-	9800 2750 9850 2750
-Wire Wire Line
-	9850 2750 9850 2800
-Wire Wire Line
-	9850 2850 9800 2850
-$Comp
-L power:GND #PWR0127
-U 1 1 5E4C442E
-P 9900 2950
-F 0 "#PWR0127" H 9900 2700 50  0001 C CNN
-F 1 "GND" H 9905 2777 50  0000 C CNN
-F 2 "" H 9900 2950 50  0001 C CNN
-F 3 "" H 9900 2950 50  0001 C CNN
-	1    9900 2950
+P 9550 2750
+F 0 "J1" H 9600 3000 50  0000 C CNN
+F 1 "5.0V" H 9600 2900 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 10200 2850 50  0001 L CNN
+F 3 "" H 10200 2750 50  0001 L CNN
+F 4 "" H 9550 2750 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9550 2750 50  0001 C CNN "Allied_Number"
+F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9550 2750 50  0001 C CNN "Description"
+F 7 "" H 9550 2750 50  0001 C CNN "Height"
+F 8 "" H 9550 2750 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9550 2750 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9550 2750 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9550 2750 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9550 2750 50  0001 C CNN "Manfacturing #"
+	1    9550 2750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9850 2800 9900 2800
-Connection ~ 9850 2800
+	9350 2750 9300 2750
 Wire Wire Line
-	9850 2800 9850 2850
+	9850 2750 9900 2750
 Wire Wire Line
-	9900 2800 9900 2950
+	9900 2750 9900 2800
+Wire Wire Line
+	9900 2850 9850 2850
+$Comp
+L power:GND #PWR0127
+U 1 1 5E4C442E
+P 9950 2950
+F 0 "#PWR0127" H 9950 2700 50  0001 C CNN
+F 1 "GND" H 9955 2777 50  0000 C CNN
+F 2 "" H 9950 2950 50  0001 C CNN
+F 3 "" H 9950 2950 50  0001 C CNN
+	1    9950 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 2800 9950 2800
+Connection ~ 9900 2800
+Wire Wire Line
+	9900 2800 9900 2850
 Wire Wire Line
 	7000 2800 7000 3550
-Wire Wire Line
-	7000 2800 9250 2800
 Connection ~ 7000 3550
 Wire Wire Line
 	7000 3550 7400 3550
@@ -692,4 +641,55 @@ Wire Wire Line
 	3900 2850 4450 2850
 Wire Wire Line
 	3550 3250 3850 3250
+Wire Wire Line
+	9300 2750 9300 2800
+Wire Wire Line
+	9300 2850 9350 2850
+Wire Wire Line
+	9300 2800 7000 2800
+Connection ~ 9300 2800
+Wire Wire Line
+	9300 2800 9300 2850
+Wire Wire Line
+	9950 2800 9950 2950
+$Comp
+L Connector_Generic:Conn_02x02_Counter_Clockwise J3
+U 1 1 5E3214E3
+P 9550 4250
+F 0 "J3" H 9600 4500 50  0000 C CNN
+F 1 "1.8V" H 9600 4400 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 10200 4350 50  0001 L CNN
+F 3 "" H 10200 4250 50  0001 L CNN
+F 4 "" H 9550 4250 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9550 4250 50  0001 C CNN "Allied_Number"
+F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9550 4250 50  0001 C CNN "Description"
+F 7 "" H 9550 4250 50  0001 C CNN "Height"
+F 8 "" H 9550 4250 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9550 4250 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9550 4250 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9550 4250 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9550 4250 50  0001 C CNN "Manfacturing #"
+	1    9550 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x02_Counter_Clockwise J2
+U 1 1 5E321C74
+P 9550 3500
+F 0 "J2" H 9600 3750 50  0000 C CNN
+F 1 "3.3V" H 9600 3650 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical" H 10200 3600 50  0001 L CNN
+F 3 "" H 10200 3500 50  0001 L CNN
+F 4 "" H 9550 3500 50  0001 C CNN "Allied Price/Stock"
+F 5 "" H 9550 3500 50  0001 C CNN "Allied_Number"
+F 6 "MOLEX - 105430-1102 - NANO-FIT HDR SMT RA SGL 2CKT TIN BLK 84AC4685" H 9550 3500 50  0001 C CNN "Description"
+F 7 "" H 9550 3500 50  0001 C CNN "Height"
+F 8 "" H 9550 3500 50  0001 C CNN "Manufacturer_Name"
+F 9 "" H 9550 3500 50  0001 C CNN "Manufacturer_Part_Number"
+F 10 "" H 9550 3500 50  0001 C CNN "Mouser Part Number"
+F 11 "" H 9550 3500 50  0001 C CNN "Mouser Price/Stock"
+F 12 "105430-1102" H 9550 3500 50  0001 C CNN "Manfacturing #"
+	1    9550 3500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -169,10 +169,6 @@ F 4 "RT0603DRE07320RL" H 6050 2000 50  0001 C CNN "Manfacturing #"
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	5350 2100 5350 2000
-Wire Wire Line
-	5350 2000 5500 2000
-Wire Wire Line
 	5500 1750 5050 1750
 Wire Wire Line
 	5050 1750 5050 2100
@@ -353,97 +349,97 @@ Vbus
 $Comp
 L Switch:SW_DIP_x02 SW2
 U 1 1 5E2D5AAA
-P 9050 1900
-F 0 "SW2" V 9004 2130 50  0000 L CNN
-F 1 "Input Current Selection" V 9095 2130 50  0000 L CNN
-F 2 "Button_Switch_SMD:SW_DIP_SPSTx02_Slide_Copal_CHS-02B_W7.62mm_P1.27mm" H 9050 1900 50  0001 C CNN
-F 3 "~" H 9050 1900 50  0001 C CNN
-F 4 "CVS-02TB" H 9050 1900 50  0001 C CNN "Manfacturing #"
-	1    9050 1900
+P 6800 5300
+F 0 "SW2" V 6754 5530 50  0000 L CNN
+F 1 "Input Current Selection" V 6845 5530 50  0000 L CNN
+F 2 "Button_Switch_SMD:SW_DIP_SPSTx02_Slide_Copal_CHS-02B_W7.62mm_P1.27mm" H 6800 5300 50  0001 C CNN
+F 3 "~" H 6800 5300 50  0001 C CNN
+F 4 "CVS-02TB" H 6800 5300 50  0001 C CNN "Manfacturing #"
+	1    6800 5300
 	0    1    1    0   
 $EndComp
-Text GLabel 9150 1000 2    50   Input ~ 0
+Text GLabel 6900 4400 2    50   Input ~ 0
 Vout
-Text GLabel 8950 1500 0    50   UnSpc ~ 0
+Text GLabel 7000 4900 2    50   UnSpc ~ 0
 EN1
-Text GLabel 9250 1500 2    50   UnSpc ~ 0
+Text GLabel 6700 4900 0    50   UnSpc ~ 0
 EN2
 $Comp
 L Device:R_Small_US R9
 U 1 1 5E2E11CE
-P 9050 1300
-F 0 "R9" H 8982 1254 50  0000 R CNN
-F 1 "10k" H 8982 1345 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9050 1300 50  0001 C CNN
-F 3 "~" H 9050 1300 50  0001 C CNN
-F 4 "SG73G1JTTD1002D" H 9050 1300 50  0001 C CNN "Manfacturing #"
-	1    9050 1300
+P 6800 4700
+F 0 "R9" H 6732 4654 50  0000 R CNN
+F 1 "10k" H 6732 4745 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6800 4700 50  0001 C CNN
+F 3 "~" H 6800 4700 50  0001 C CNN
+F 4 "SG73G1JTTD1002D" H 6800 4700 50  0001 C CNN "Manfacturing #"
+	1    6800 4700
 	1    0    0    1   
 $EndComp
 $Comp
 L Device:R_Small_US R10
 U 1 1 5E2E2CB5
-P 9150 1300
-F 0 "R10" H 9218 1346 50  0000 L CNN
-F 1 "10k" H 9218 1255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9150 1300 50  0001 C CNN
-F 3 "~" H 9150 1300 50  0001 C CNN
-F 4 "SG73G1JTTD1002D" H 9150 1300 50  0001 C CNN "Manfacturing #"
-	1    9150 1300
+P 6900 4700
+F 0 "R10" H 6968 4746 50  0000 L CNN
+F 1 "10k" H 6968 4655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6900 4700 50  0001 C CNN
+F 3 "~" H 6900 4700 50  0001 C CNN
+F 4 "SG73G1JTTD1002D" H 6900 4700 50  0001 C CNN "Manfacturing #"
+	1    6900 4700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9050 1400 9050 1500
+	6800 4800 6800 4900
 Wire Wire Line
-	9050 1500 8950 1500
+	6800 4900 6700 4900
 Wire Wire Line
-	9050 1500 9050 1600
-Connection ~ 9050 1500
+	6800 4900 6800 5000
+Connection ~ 6800 4900
 Wire Wire Line
-	9150 1400 9150 1500
+	6900 4800 6900 4900
 Wire Wire Line
-	9250 1500 9150 1500
-Connection ~ 9150 1500
+	7000 4900 6900 4900
+Connection ~ 6900 4900
 Wire Wire Line
-	9150 1500 9150 1600
+	6900 4900 6900 5000
 Wire Wire Line
-	9050 1200 9050 1150
+	6800 4600 6800 4550
 Wire Wire Line
-	9050 1150 9100 1150
+	6800 4550 6850 4550
 Wire Wire Line
-	9150 1150 9150 1200
+	6900 4550 6900 4600
 Wire Wire Line
-	9150 1000 9100 1000
+	6900 4400 6850 4400
 Wire Wire Line
-	9100 1000 9100 1150
-Connection ~ 9100 1150
+	6850 4400 6850 4550
+Connection ~ 6850 4550
 Wire Wire Line
-	9100 1150 9150 1150
+	6850 4550 6900 4550
 Wire Wire Line
-	9050 2200 9050 2250
+	6800 5600 6800 5650
 Wire Wire Line
-	9050 2250 9100 2250
+	6800 5650 6850 5650
 Wire Wire Line
-	9150 2250 9150 2200
+	6900 5650 6900 5600
 Wire Wire Line
-	9100 2250 9100 2300
-Connection ~ 9100 2250
+	6850 5650 6850 5700
+Connection ~ 6850 5650
 Wire Wire Line
-	9100 2250 9150 2250
+	6850 5650 6900 5650
 $Comp
 L power:GND #PWR0114
 U 1 1 5E2FEC35
-P 9100 2300
-F 0 "#PWR0114" H 9100 2050 50  0001 C CNN
-F 1 "GND" H 9105 2127 50  0000 C CNN
-F 2 "" H 9100 2300 50  0001 C CNN
-F 3 "" H 9100 2300 50  0001 C CNN
-	1    9100 2300
+P 6850 5700
+F 0 "#PWR0114" H 6850 5450 50  0001 C CNN
+F 1 "GND" H 6855 5527 50  0000 C CNN
+F 2 "" H 6850 5700 50  0001 C CNN
+F 3 "" H 6850 5700 50  0001 C CNN
+	1    6850 5700
 	1    0    0    -1  
 $EndComp
-Text Notes 9600 1400 0    50   ~ 0
+Text Notes 7350 4800 0    50   ~ 0
 0       0       100mA\n0       1       500mA\n1       0       Ilim\n1       1       USB Standby
-Text Notes 9600 1050 0    50   ~ 10
+Text Notes 7350 4450 0    50   ~ 10
 EN2    EN1     Iin
 Text Label 8050 3150 0    50   ~ 0
 BATT+
@@ -476,8 +472,6 @@ Wire Wire Line
 	3850 3100 3850 3050
 Wire Wire Line
 	3850 3050 4300 3050
-Text Notes 950  6250 0    50   ~ 0
-NOTES:\n- i_lim is the maximum input current set by the following ratio:\ni_lim = k_ilim / R_ilim.\nWhere k_ilim approx 1600. \nMaking the resistance R  = 2k\nThis design i_lim is set to 800mA see 9.4 in datasheet for details.
 Text GLabel 3000 4550 0    50   UnSpc ~ 0
 ~CE
 $Comp
@@ -510,10 +504,6 @@ Wire Wire Line
 	4250 4100 4250 4300
 Wire Wire Line
 	5000 4750 5000 4800
-Text Notes 4250 5700 0    50   ~ 10
-Battery CC charger Jumper Configurations
-Text Notes 4650 5950 0    50   ~ 0
-3 + 2 -> 500mA\n1 + 2 -> 100mA
 $Comp
 L power:GND #PWR0119
 U 1 1 5E2F5A3C
@@ -534,7 +524,7 @@ Wire Wire Line
 Connection ~ 5550 4550
 Wire Wire Line
 	5550 4550 5550 4600
-Text Notes 9600 950  0    50   ~ 10
+Text Notes 7350 4350 0    50   ~ 10
 Input Current Limit
 NoConn ~ 2500 2500
 NoConn ~ 2500 2600
@@ -573,7 +563,7 @@ Wire Wire Line
 	3100 3850 3100 3900
 Text Notes 1750 4300 0    50   ~ 0
 Switch is normaly open.\nTurn to ON to Disable Charge
-Text Notes 950  6400 0    50   ~ 0
+Text Notes 2050 6000 0    50   ~ 0
 - All jumpers need a 0.1" (2.54mm) jumper.
 Wire Wire Line
 	5000 4450 5000 4550
@@ -649,4 +639,12 @@ Vout
 Wire Wire Line
 	7300 2550 7450 2550
 Connection ~ 7300 2550
+Wire Wire Line
+	5350 2000 5500 2000
+Wire Wire Line
+	5350 2100 5350 2000
+Text Notes 4800 5150 0    50   ~ 10
+Iset= 500mA\n
+Text Notes 2050 5850 0    50   ~ 0
+NOTES:\n- i_lim is the maximum input current set by the following ratio:\ni_lim = k_ilim / R_ilim.\nWhere k_ilim approx 1600. \nMaking the resistance R  = 2k\nThis design i_lim is set to 800mA see 9.4 in datasheet for details.
 $EndSCHEMATC
