@@ -1,9 +1,0 @@
-(sym_lib_table
-  (lib (name TPS61232DRCR)(type Legacy)(uri ${KI_SDREPO}/TPS6123x+/TPS61232DRCR.lib)(options "")(descr ""))
-  (lib (name IHLP2020BZER1R0M01)(type Legacy)(uri ${KI_SDREPO}/IHLP2020BZER1R0M01/IHLP2020BZER1R0M01.lib)(options "")(descr ""))
-  (lib (name LM3940ISX-3.3)(type Legacy)(uri ${KI_SDREPO}/LM3940ISX-3.3/LM3940ISX-3.3.lib)(options "")(descr ""))
-  (lib (name TPPM0110DWPR)(type Legacy)(uri ${KI_SDREPO}/TPPM0110DWPR/TPPM0110DWPR.lib)(options "")(descr ""))
-  (lib (name 5boost-rescue)(type Legacy)(uri ${KIPRJMOD}/5boost-rescue.lib)(options "")(descr ""))
-  (lib (name MOLEX_Connector_105430)(type Legacy)(uri ${KI_SDREPO}/MOLEX_Connector_105430/105430-1102.lib)(options "")(descr ""))
-  (lib (name BQ24072TRGTR)(type Legacy)(uri ${KI_SDREPO}/BQ24072TRGTR/BQ24072TRGTR.lib)(options "")(descr ""))
-)

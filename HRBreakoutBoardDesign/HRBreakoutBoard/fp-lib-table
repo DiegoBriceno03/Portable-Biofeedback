@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name MAX30101)(type KiCad)(uri ${KI_SDREPO}/MAX3010EFD+/footprints.pretty)(options "")(descr ""))
-)
