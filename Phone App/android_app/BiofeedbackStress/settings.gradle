@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Biofeedback Stress'
+rootProject.name='BiofeedbackStress'

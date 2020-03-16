@@ -1,42 +1,41 @@
 package com.example.biofeedbackstress;
 
-import com.example.ble.*;
-import com.example.utils.Utils;
-
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.ScrollView;
+import android.util.Log;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.example.ble.*;
+import com.example.utils.Utils;
 
-// Main activity of the phone app
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
+import timber.log.Timber;
+
+import static com.example.utils.Utils.ACCESS_LOCATION_REQUEST;
+
+// ===================
+//      TEST UUID
+// ===================
+// Test Value Service: 96ef0ec6-b0a7-4ffa-9e49-74c2d24d5371
+// TEST_CHARACTERISTIC_UUID: dda9a9d0-2de0-4da8-84eb-2c9d15d6407c
+
+public class MainActivity extends AppCompatActivity
 {
-    private final static String TAG = MainActivity.class.getSimpleName();
-
-    public static final int REQUEST_ENABLE_BT = 1;
-    public static final int BTLE_SERVICES = 2;
-
-    private HashMap<String, BTLE_Device> mBTDevicesHashMap;
-    private ArrayList<BTLE_Device> mBTDevicesArrayList;
-    private ListAdapter_BTLE_Devices adapter;
-    private ListView listView;
-
-    private Button btn_Scan;
-
-    private BroadcastReceiver_BTState mBTStateUpdateReceiver;
-    private Scanner_BTLE mBTLeScanner;
+    private final String TAG = MainActivity.class.getSimpleName();
+    private TextView measurementValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,155 +43,107 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Checks to determine whether BLE is supported on device. Can be used
-        // to selectively disable BLE-related features.
-        if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE))
+        Log.d(TAG, "onCreate() called");
+
+        Timber.plant(new Timber.DebugTree());
+
+        setContentView(R.layout.activity_main);
+        measurementValue = (TextView) findViewById(R.id.measurementValue);
+
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if (bluetoothAdapter == null)
+            return;
+
+        if (!bluetoothAdapter.isEnabled())
         {
-            Utils.toast(getApplicationContext(), "BLE not supported");
-            finish();
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, Utils.REQUEST_ENABLE_BT);
         }
 
-        mBTStateUpdateReceiver = new BroadcastReceiver_BTState(getApplicationContext());
-        mBTLeScanner = new Scanner_BTLE(this, 5000, -75);
-
-        mBTDevicesHashMap = new HashMap<>();
-        mBTDevicesArrayList = new ArrayList<>();
-
-        adapter = new ListAdapter_BTLE_Devices(this, R.layout.btle_device_list_item, mBTDevicesArrayList);
-
-        listView = new ListView(this);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(this);
-
-        btn_Scan = (Button) findViewById(R.id.btn_scan);
-        ((ScrollView) findViewById(R.id.scrollView)).addView(listView);
-        findViewById(R.id.btn_scan).setOnClickListener(this);
+        if (hasPermissions())
+            initBluetoothHandler();
     }
 
-    @Override
-    protected void onStart()
+    // Isn't this where the BLE_Handler is initialized?
+    private void initBluetoothHandler()
     {
-        super.onStart();
-        registerReceiver(mBTStateUpdateReceiver, new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED));
+        BLE_Handler.getInstance(getApplicationContext());
+
+        // The action that's being filtered should be matching with what is stated within the
+        // BLE_Handler class
+        //registerReceiver(esp32DataReceiver, new IntentFilter("TestMeasurement"));
+        registerReceiver(heartRateDataReceiver, new IntentFilter("HeartRateMeasurement"));
     }
 
     @Override
-    protected void onResume()
-    {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        stopScan();
-    }
-
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-
-        unregisterReceiver(mBTStateUpdateReceiver);
-        stopScan();
-    }
-
-    @Override
-    public void onDestroy()
+    protected void onDestroy()
     {
         super.onDestroy();
+        unregisterReceiver(heartRateDataReceiver);
+        //unregisterReceiver(esp32DataReceiver);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    private final BroadcastReceiver heartRateDataReceiver = new BroadcastReceiver()
     {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Checks which request to respond to
-        if (requestCode == REQUEST_ENABLE_BT)
+        @Override
+        public void onReceive(Context context, Intent intent)
         {
-            // Ensures successful request
-            if (resultCode == RESULT_OK)
-                Utils.toast(getApplicationContext(), "Thank you for turning on Bluetooth");
-            else if (resultCode == RESULT_CANCELED)
-                Utils.toast(getApplicationContext(), "Please turn on Bluetooth");
+            HeartRate_Measurement measurement = (HeartRate_Measurement) intent.getSerializableExtra("HeartRateVal");
+            measurementValue.setText(String.format(Locale.ENGLISH, "%d", measurement.pulse));
         }
-        else if (requestCode == BTLE_SERVICES)
+    };
+
+//    private final BroadcastReceiver esp32DataReceiver = new BroadcastReceiver()
+//    {
+//        // What to do with received data
+//        @Override
+//        public void onReceive(Context context, Intent intent)
+//        {
+//            TestMeasurement measurement = (TestMeasurement) intent.getSerializableExtra("TestVal");
+////            DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH);
+////            String formattedTimestamp = df.format(measurement.timestamp);
+//            measurementValue.setText(String.format(Locale.ENGLISH, "%d", measurement.count));
+//        }
+//    };
+
+    // Activity will cause app to ask User for permission to allow Bluetooth access
+    private boolean hasPermissions()
+    {
+        int targetSdkVersion = getApplicationInfo().targetSdkVersion;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && targetSdkVersion >= Build.VERSION_CODES.Q)
         {
-            // Do something
+            if (getApplicationContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_LOCATION_REQUEST);
+                return false;
+            }
         }
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-    {
-        Context context = view.getContext();
-
-        stopScan();
-
-        String name = mBTDevicesArrayList.get(position).getName();
-        String address = mBTDevicesArrayList.get(position).getAddress();
-
-        Intent intent = new Intent(this, Activity_BTLE_Services.class);
-        intent.putExtra(Activity_BTLE_Services.EXTRA_NAME, name);
-        intent.putExtra(Activity_BTLE_Services.EXTRA_ADDRESS, address);
-        startActivityForResult(intent, BTLE_SERVICES);
-    }
-
-    @Override
-    public void onClick(View v)
-    {
-        switch (v.getId())
+        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            case R.id.btn_scan:
-                Utils.toast(getApplicationContext(), "Scan Button Pressed");
+            if (getApplicationContext().checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+            {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, ACCESS_LOCATION_REQUEST);
+                return false;
+            }
+        }
 
-                if (!mBTLeScanner.ismScanning())
-                    startScan();
-                else
-                    stopScan();
+        return true;
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        switch (requestCode)
+        {
+            case ACCESS_LOCATION_REQUEST:
+                if (grantResults.length > 0)
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                        initBluetoothHandler();
                 break;
             default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
                 break;
         }
-    }
-
-    public void addDevice(BluetoothDevice device, int rssi)
-    {
-        String address = device.getAddress();
-
-        if (!mBTDevicesHashMap.containsKey(address))
-        {
-            BTLE_Device btleDevice = new BTLE_Device(device);
-            btleDevice.setRSSI(rssi);
-
-            mBTDevicesHashMap.put(address, btleDevice);
-            mBTDevicesArrayList.add(btleDevice);
-        }
-        else
-        {
-            mBTDevicesHashMap.get(address).setRSSI(rssi);
-        }
-
-        adapter.notifyDataSetChanged();
-    }
-
-    public void startScan()
-    {
-        btn_Scan.setText("Scanning...");
-
-        mBTDevicesArrayList.clear();
-        mBTDevicesHashMap.clear();
-
-        mBTLeScanner.start();
-    }
-
-    public void stopScan()
-    {
-        btn_Scan.setText("Scan Again");
-
-        mBTLeScanner.stop();
     }
 }
