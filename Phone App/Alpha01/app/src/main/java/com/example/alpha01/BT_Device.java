@@ -1,12 +1,10 @@
 import android.bluetooth.BluetoothDevice;
 
-public
-class BTLE_Device {
-
+public class BT_Device {
     private BluetoothDevice bluetoothDevice;
     private int rssi;
 
-    public BTLE_Device(BluetoothDevice bluetoothDevice) {
+    public BT_Device(BluetoothDevice bluetoothDevice) {
         this.bluetoothDevice = bluetoothDevice;
     }
 
@@ -15,14 +13,14 @@ class BTLE_Device {
     }
 
     public String getName() {
-        return bluetoothDevice.getName();
+        return bluetoothDevice.getAddress();
     }
 
-    public void setRSSI(int rssi) {
+    public void setRssi(int rssi) {
         this.rssi = rssi;
     }
 
-    public int getRSSI() {
+    public int getRssi() {
         return rssi;
     }
 }

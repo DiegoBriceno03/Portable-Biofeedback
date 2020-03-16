@@ -5,6 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+//Tells the app if the Bluetooth changes state
+
 public class BTRX_BTState {
 
     Context activityContext;
@@ -13,7 +15,7 @@ public class BTRX_BTState {
         this.activityContext = activityContext;
     }
 
-
+    @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
 
