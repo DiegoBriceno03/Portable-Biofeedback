@@ -38,12 +38,13 @@ public class BLE_Handler
     // Characteristic UUIDs found within the SDS
 //     private static final UUID BATTERY_LEVEL_CHARACTERISTIC_UUID = UUID.fromString("00002A19-0000-1000-8000-00805f9b34fb");
      private static final UUID HEARTRATE_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("00002A37-0000-1000-8000-00805f9b34fb");
-//     private static final UUID TEMPERATURE_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("00002A1C-0000-1000-8000-00805f9b34fb");
-//     private static final UUID GSR_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("0d823996-e5a7-4ce3-9ae3-6649d46d8f85");
+     private static final UUID TEMPERATURE_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("00002A1C-0000-1000-8000-00805f9b34fb");
+     private static final UUID GSR_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("0d823996-e5a7-4ce3-9ae3-6649d46d8f85");
 
     // Currently being used for testing purposes
     //private static final UUID TVS_SERVICE_UUID = UUID.fromString("63228c99-ee20-4dcf-a90a-711948af59e0");
     //private static final UUID TEST_VALUE_CHARACTERISTIC_UUID = UUID.fromString("dda9a9d0-2de0-4da8-84eb-2c9d15d6407c");
+
     private static final String MY_ESP32 = "Group 11 BLE";
 
     private BluetoothCentral bleCentral;
@@ -76,12 +77,9 @@ public class BLE_Handler
             {
                 if (peripheral.getCharacteristic(SDS_SERVICE_UUID, HEARTRATE_MEASUREMENT_CHARACTERISTIC_UUID) != null)
                 {
-                    Timber.d("Doesn't suck to suck");
                     peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, HEARTRATE_MEASUREMENT_CHARACTERISTIC_UUID), true);
-                }
-                else
-                {
-                    Timber.d("Sucks to suck");
+                    peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, TEMPERATURE_MEASUREMENT_CHARACTERISTIC_UUID), true);
+                    peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, GSR_MEASUREMENT_CHARACTERISTIC_UUID), true);
                 }
             }
 
@@ -89,8 +87,6 @@ public class BLE_Handler
 //            if (peripheral.getService(SDS_SERVICE_UUID) != null)
 //            {
 //                peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, BATTERY_LEVEL_CHARACTERISTIC_UUID),true);
-//                peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, TEMPERATURE_MEASUREMENT_CHARACTERISTIC_UUID), true);
-//                peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, GSR_MEASUREMENT_CHARACTERISTIC_UUID), true);
 //            }
         }
 
@@ -142,6 +138,28 @@ public class BLE_Handler
                 Timber.d("%s", measurement);
             }
 
+            if (characteristicUUID.equals(TEMPERATURE_MEASUREMENT_CHARACTERISTIC_UUID))
+            {
+                Temperature_Measurement measurement = new Temperature_Measurement(value);
+
+                Intent intent = new Intent("TemperatureMeasurement");
+                intent.putExtra("TempVal", measurement);
+
+                context.sendBroadcast(intent);
+                Timber.d("%s", measurement);
+            }
+
+            if (characteristicUUID.equals(GSR_MEASUREMENT_CHARACTERISTIC_UUID))
+            {
+                GSR_Measurement measurement = new GSR_Measurement(value);
+
+                Intent intent = new Intent("GSRMeasurement");
+                intent.putExtra("GSRVal", measurement);
+
+                context.sendBroadcast(intent);
+                Timber.d("%s", measurement);
+            }
+
             // Hopefully this will work
 //            if (characteristicUUID.equals(TEST_VALUE_CHARACTERISTIC_UUID))
 //            {
@@ -186,8 +204,6 @@ public class BLE_Handler
         public void onDisconnectedPeripheral(final BluetoothPeripheral peripheral, int status)
         {
             Timber.i("Disconnected '%s' with status %d", peripheral.getName(), status);
-//            String msg = "Disconnected " + peripheral.getName() + " failed with status " + status;
-//            Utils.toast(context, msg);
 
             // Reconnect to disconnected device when it is available once again
             handler.postDelayed(new Runnable()

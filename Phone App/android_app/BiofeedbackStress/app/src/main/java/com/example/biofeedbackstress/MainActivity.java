@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity
     private final String TAG = MainActivity.class.getSimpleName();
     private TextView measurementValue;
 
+    // These are for the actual sensor stuff
+    private TextView heartRateValue;
+    private TextView temperatureValue;
+    private TextView gsrValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -48,7 +53,9 @@ public class MainActivity extends AppCompatActivity
         Timber.plant(new Timber.DebugTree());
 
         setContentView(R.layout.activity_main);
-        measurementValue = (TextView) findViewById(R.id.measurementValue);
+        heartRateValue = (TextView) findViewById(R.id.heartRateValue);
+        temperatureValue = (TextView) findViewById(R.id.temperatureValue);
+        gsrValue = (TextView) findViewById(R.id.gsrValue);
 
         BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -74,6 +81,8 @@ public class MainActivity extends AppCompatActivity
         // BLE_Handler class
         //registerReceiver(esp32DataReceiver, new IntentFilter("TestMeasurement"));
         registerReceiver(heartRateDataReceiver, new IntentFilter("HeartRateMeasurement"));
+        registerReceiver(temperatureDataReceiver, new IntentFilter("TemperatureMeasurement"));
+        registerReceiver(gsrDataReceiver, new IntentFilter("GSRMeasurement"));
     }
 
     @Override
@@ -81,6 +90,8 @@ public class MainActivity extends AppCompatActivity
     {
         super.onDestroy();
         unregisterReceiver(heartRateDataReceiver);
+        unregisterReceiver(temperatureDataReceiver);
+        unregisterReceiver(gsrDataReceiver);
         //unregisterReceiver(esp32DataReceiver);
     }
 
@@ -90,7 +101,32 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent)
         {
             HeartRate_Measurement measurement = (HeartRate_Measurement) intent.getSerializableExtra("HeartRateVal");
-            measurementValue.setText(String.format(Locale.ENGLISH, "%d", measurement.pulse));
+
+            // This is for testing purposes
+//            heartRateValue.setText(String.format(Locale.ENGLISH, "%d bpm", measurement.pulse));
+
+            // This is the actual one to be used
+            heartRateValue.setText(String.format(Locale.ENGLISH, "%.2f bpm", measurement.pulse));
+        }
+    };
+
+    private final BroadcastReceiver temperatureDataReceiver = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            Temperature_Measurement measurement = (Temperature_Measurement) intent.getSerializableExtra("TempVal");
+            temperatureValue.setText(String.format(Locale.ENGLISH, "%.2f F", measurement.temperature));
+        }
+    };
+
+    private final BroadcastReceiver gsrDataReceiver = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            GSR_Measurement measurement = (GSR_Measurement) intent.getSerializableExtra("GSRVal");
+            gsrValue.setText(String.format(Locale.ENGLISH, "%d", measurement.conduct));
         }
     };
 
