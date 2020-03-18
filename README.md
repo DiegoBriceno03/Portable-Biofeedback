@@ -17,13 +17,18 @@ These projects use custom path for its libraries. The custom Kicad Path variable
 
 ## Hardware
 - [x] MAX30101 Heart Rate / Pulse Oximeter Breakout Board REV -
-- [ ] Galvanic Skin Response Sensor
+- [x] Galvanic Skin Response Sensor (Groove Seed GSR Sensor design used: https://www.seeedstudio.com/Grove-GSR-sensor-p-1614.html.html)
 - [x] Temperature Sensor Supporting Hardware
 - [x] Battery Charging Managing circuit (BMS)
 - [x] Power Regulation
+Integration of these hardware is seen under ~/Prototyp_REV- 
 
 ## Software
-- [ ] Heart Rate Data Processing Algorithm
-- [ ] Temperature Data Processing Algorithm
-- [ ] Galvanic Skin Resistance Data Processing Algorithm
+### Phone App
+- [x] Bluetooth backend
 - [ ] UI / UX
+
+### Firmware
+- [x] Heart Rate Data Processing Algorithm
+- [x] Temperature Data Processing Algorithm
+- [x] Galvanic Skin Resistance Data Processing Algorithm
