@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.biofeedbackstress">
-
+    <!--
+     Enabling Bluetooth functionality for the app. ACCESS_COARSE_LOCATION is used as app is targeting
+     Android 5.0+ (ACCESS_FINE_LOCATION is for Android 9.0+)
+     -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
+    <!--
+    App is available to BLE-capable devices ONLY. If app is to be made available to devices that do
+    NOT support it, set required="false"
+    -->
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
@@ -17,13 +26,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:label="@string/app_name"
+            android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

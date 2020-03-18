@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Stress Management</string>
-    <string name="hello">Hello World!</string>
-    <string name="bl_scan">Scan for Devices</string>
-    <string name="CLIENT_CHARACTERISTIC_CONFIG">00002902-0000-1000-8000-00805f9b34fb</string>
+    <string name="app_name">Biofeedback Stress Management</string>
+    <string name="measurementTextView">Waiting for value...</string>
+    <string name="battLevel">Battery Level: </string>
+    <string name="gsr">Galvanic Skin Resistance: </string>
+    <string name="heartRate">Heart Rate: </string>
+    <string name="tempMeasurement">Temperature: </string>
 </resources>
