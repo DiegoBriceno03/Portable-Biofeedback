@@ -23,7 +23,6 @@ import static android.bluetooth.BluetoothGattCharacteristic.PROPERTY_WRITE;
 import static android.bluetooth.BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT;
 import static com.welie.blessed.BluetoothBytesParser.FORMAT_UINT16;
 import static com.welie.blessed.BluetoothBytesParser.FORMAT_UINT8;
-import static com.welie.blessed.BluetoothBytesParser.bytes2String;
 import static com.welie.blessed.BluetoothPeripheral.GATT_SUCCESS;
 import static com.welie.blessed.BluetoothBytesParser.bytes2String;
 
@@ -47,7 +46,6 @@ public class BLE_Handler
     private static BLE_Handler instance = null;
     private Context context;
     private Handler handler = new Handler();
-    private int currentTimeCounter = 0;
 
     // Callback for peripherals. Provides set of functions that execute depending on what occurs
     // with BluetoothPeripherals

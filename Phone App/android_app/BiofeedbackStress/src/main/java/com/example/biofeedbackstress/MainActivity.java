@@ -19,6 +19,9 @@ import com.example.ble.*;
 import com.example.utils.Utils;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -27,21 +30,20 @@ import timber.log.Timber;
 
 import static com.example.utils.Utils.ACCESS_LOCATION_REQUEST;
 
-// ===================
-//      TEST UUID
-// ===================
-// Test Value Service: 96ef0ec6-b0a7-4ffa-9e49-74c2d24d5371
-// TEST_CHARACTERISTIC_UUID: dda9a9d0-2de0-4da8-84eb-2c9d15d6407c
-
 public class MainActivity extends AppCompatActivity
 {
     private final String TAG = MainActivity.class.getSimpleName();
-    private TextView measurementValue;
 
-    // These are for the actual sensor stuff
+    // Sensor values
     private TextView heartRateValue;
     private TextView temperatureValue;
     private TextView gsrValue;
+
+    // Files
+    private File rootFolder;
+    private File jsonHRFile;
+    private File jsonTempFile;
+    private File jsonGSRFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -70,9 +72,14 @@ public class MainActivity extends AppCompatActivity
 
         if (hasPermissions())
             initBluetoothHandler();
+
+        rootFolder = this.getExternalFilesDir(null);
+
+        jsonHRFile = new File(rootFolder, HeartRate_Measurement.fileHR);
+        jsonTempFile = new File(rootFolder, Temperature_Measurement.tempFile);
+        jsonGSRFile = new File(rootFolder, GSR_Measurement.gsrFile);
     }
 
-    // Isn't this where the BLE_Handler is initialized?
     private void initBluetoothHandler()
     {
         BLE_Handler.getInstance(getApplicationContext());
@@ -88,6 +95,7 @@ public class MainActivity extends AppCompatActivity
     protected void onDestroy()
     {
         super.onDestroy();
+
         unregisterReceiver(heartRateDataReceiver);
         unregisterReceiver(temperatureDataReceiver);
         unregisterReceiver(gsrDataReceiver);
@@ -99,21 +107,38 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent)
         {
             HeartRate_Measurement measurement = (HeartRate_Measurement) intent.getSerializableExtra("HeartRateVal");
-            //String data = String.format(Locale.ENGLISH, "%d", measurement.pulse);
+
+            Timestamp ts = new Timestamp(System.currentTimeMillis());
+
+            try
+            {
+                saveData(String.format("{\"time\" : \"%s\", \"beat\" : %d}\n", ts.toString(), measurement.pulse), jsonHRFile);
+            } catch (IOException e)
+            {
+                Timber.e(e);
+            }
 
             heartRateValue.setText(String.format(Locale.ENGLISH, "%d bpm", measurement.pulse));
-            //Utils.writeToFile(context, Integer.toString(measurement.pulse), HeartRate_Measurement.fileHR);
         }
     };
 
-    // Issues currently exist for the temperature. Should be printing out as a float. Figure out
-    // why it is not working
     private final BroadcastReceiver temperatureDataReceiver = new BroadcastReceiver()
     {
         @Override
         public void onReceive(Context context, Intent intent)
         {
             Temperature_Measurement measurement = (Temperature_Measurement) intent.getSerializableExtra("TempVal");
+
+            Timestamp ts = new Timestamp(System.currentTimeMillis());
+
+            try
+            {
+                saveData(String.format("{\"time\" : \"%s\", \"temperature\" : %s}\n", ts.toString(), measurement.temperature), jsonTempFile);
+            } catch (IOException e)
+            {
+                Timber.e(e);
+            }
+
             temperatureValue.setText(String.format(Locale.ENGLISH, "%s F", measurement.temperature));
         }
     };
@@ -124,6 +149,17 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent)
         {
             GSR_Measurement measurement = (GSR_Measurement) intent.getSerializableExtra("GSRVal");
+
+            Timestamp ts = new Timestamp(System.currentTimeMillis());
+
+            try
+            {
+                saveData(String.format("{\"time\" : \"%s\", \"conductance\" : %d}\n", ts.toString(), measurement.conduct), jsonGSRFile);
+            } catch (IOException e)
+            {
+                Timber.e(e);
+            }
+
             gsrValue.setText(String.format(Locale.ENGLISH, "%d", measurement.conduct));
         }
     };
@@ -166,5 +202,13 @@ public class MainActivity extends AppCompatActivity
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
                 break;
         }
+    }
+
+    // Will this work?
+    public void saveData(String data, File jsonFileName) throws IOException
+    {
+        FileWriter writer = new FileWriter(jsonFileName, true);
+        writer.write(data);
+        writer.close();
     }
 }

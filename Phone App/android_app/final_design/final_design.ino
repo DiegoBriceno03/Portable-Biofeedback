@@ -19,18 +19,19 @@
 //                 1
 // T = ----------------------------
 //     1/To + (1/beta) * ln(Rt/Ro)
-const int thermistorPin = 34;
-double adcMax = 4095.0; // Max value of ADC, 12 bit: 0 -> 4095 
-double Vs = 3.3; // Supply voltage for the voltage divider
-double R1 = 9800.0;   // voltage divider resistor value
-double Beta = 3950.0;  // Beta value
-double To = 298.15;    // Temperature in Kelvin for 25 degree Celsius
-double Ro = 10000.0;   // Resistance of Thermistor at 25 degree Celsius
-double Vout, Rt, T, Tf = 0;
+const int thermistorPin = 35;
+float adcMax = 4095.0; // Max value of ADC, 12 bit: 0 -> 4095 
+float Vs = 3.3; // Supply voltage for the voltage divider
+float R1 = 9800.0;   // voltage divider resistor value
+float Beta = 3950.0;  // Beta value
+float To = 298.15;    // Temperature in Kelvin for 25 degree Celsius
+float Ro = 10000.0;   // Resistance of Thermistor at 25 degree Celsius
+float Vout, Rt, T, Tf = 0;
+char string_Tf[4]; // Should be equivalent to a float (4bytes)
 
 
 // Setup variables for GSR sensor
-const int gsrPin = 35;
+const int gsrPin = 34;
 int sum = 0;
 int gsrValue = 0;
 int gsrAverage = 0;
@@ -43,6 +44,7 @@ byte rates[RATE_SIZE]; //Array of heart rates
 byte rateSpot = 0;
 long lastBeat = 0; //Time at which the last beat occurred
 float beatsPerMinute;
+int previousHeartRate = 0;
 int beatAvg;
 
 
@@ -87,7 +89,7 @@ void setup() {
   BLEService *pService = pServer->createService(SERVICE_UUID);
 
   // Setup the Thermistor Characteristic
-  Serial.println("1");
+//  Serial.println("1");
   thermistorChar = pService->createCharacteristic(
                                          THERMISTOR_UUID,
                                          BLECharacteristic::PROPERTY_NOTIFY |
@@ -97,8 +99,10 @@ void setup() {
                                        );
   //thermistorChar->setValue(0);
 
+  thermistorChar->addDescriptor(new BLE2902());
+
   // Setup the GSR Characteristic
-  Serial.println("2");
+//  Serial.println("2");
   gsrChar = pService->createCharacteristic(
                                          GSR_UUID,
                                          BLECharacteristic::PROPERTY_NOTIFY |
@@ -108,8 +112,10 @@ void setup() {
                                        );
   //gsrChar->setValue(0);
 
+  gsrChar->addDescriptor(new BLE2902());
+
   // Setup the Heart Rate Characteristic
-  Serial.println("3");
+//  Serial.println("3");
   heartRateChar = pService->createCharacteristic(
                                          HEARTRATE_UUID,
                                          BLECharacteristic::PROPERTY_NOTIFY |
@@ -120,9 +126,6 @@ void setup() {
   //heartRateChar->setValue(0);
 
   heartRateChar->addDescriptor(new BLE2902());
-  thermistorChar->addDescriptor(new BLE2902());
-  gsrChar->addDescriptor(new BLE2902());
-  
 
   // Setup the Battery Characteristic
   // Serial.println("4");
@@ -130,9 +133,12 @@ void setup() {
                                          BATTERY_UUID,
                                          BLECharacteristic::PROPERTY_NOTIFY |
                                          BLECharacteristic::PROPERTY_READ |
-                                         BLECharacteristic::PROPERTY_WRITE
+                                         BLECharacteristic::PROPERTY_WRITE |
+                                         BLECharacteristic::PROPERTY_INDICATE
                                        );
   //batteryChar->setValue(0);
+
+  batteryChar->addDescriptor(new BLE2902());
   
   pService->start();
   // BLEAdvertising *pAdvertising = pServer->getAdvertising();  // this still is working for backward compatibility
@@ -144,90 +150,122 @@ void setup() {
   BLEDevice::startAdvertising();
   Serial.println("BLE Setup Complete");
 
+
   // Initialize heart rate sensor
-//  if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) //Use default I2C port, 400kHz speed
-//  {
-//    Serial.println("MAX30105 was not found. Please check wiring/power. ");
-//    while (1);
-//  }
-//  Serial.println("Place your index finger on the sensor with steady pressure.");
-//
-//  particleSensor.setup(); //Configure sensor with default settings
-//  particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
-//  particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
+  if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) //Use default I2C port, 400kHz speed
+  {
+    Serial.println("MAX30105 was not found. Please check wiring/power. ");
+    while (1);
+  }
+  Serial.println("Place your index finger on the sensor with steady pressure.");
+
+  particleSensor.setup(); //Configure sensor with default settings
+  particleSensor.setPulseAmplitudeRed(0); // Turn Red LED off
+  particleSensor.setPulseAmplitudeIR(0); // Turn IR LED off
+//  particleSensor.setPulseAmplitudeGreen(0); // Turn off Green LED
 
 }
 
 void loop() {
 
+  i++;
+
+//  Serial.println("Start");
+
   // Read the thermistor and convert it to fahrenheit
-//  Vout = .2 + (analogRead(thermistorPin) * Vs/adcMax); // .2 is added to make the sensor more accurate
-//  //Serial.println(Vout); // use to calibrate
-//  Rt = R1 * Vout / (Vs - Vout); 
-//  T = 1/(1/To + log(Rt/Ro)/Beta);  // Temperature in Kelvin
-//  Tf = (T - 273.15) * 9 / 5 + 32; // Convert to Fahrenheit
-//
-//  thermistorChar->setValue(Tf);
-//  thermistorChar->notify();
+
+  if(!(i % 256)){
+    Vout = .15 + (analogRead(thermistorPin) * Vs/adcMax); // .2 is added to make the sensor more accurate
+//    Serial.println(Vout); // use to calibrate
+    Rt = R1 * Vout / (Vs - Vout); 
+    T = 1/(1/To + log(Rt/Ro)/Beta);  // Temperature in Kelvin
+    Tf = (T - 273.15) * 9 / 5 + 32; // Convert to Fahrenheit
+
+  // Debugging purposes
+    //Serial.printf("Before Temp: %.2f\n", Tf);
+
+    dtostrf(Tf, 4, 2, string_Tf);
+
+  // For debugging purposes
+    //Serial.printf("String Temp: %s\n", buff);
+    thermistorChar->setValue(string_Tf);
+    thermistorChar->notify();
+  }
 
   
   //read the gsr sensor
-  //reset sum
-//  sum=0;
-//  //Average the 10 measurements to remove the glitch
-//  for(int i=0;i<10;i++) {   
-//    gsrValue=analogRead(gsrPin);
-//    sum += gsrValue;
-//    delay(5);
-//  }
-//  gsrAverage = sum/10;
-//  Serial.println(gsrAverage);
+  
+  if(!(i % 256)){
+    //reset sum
+    sum=0;
+    //Average the 10 measurements to remove the glitch
+    for(int i=0;i<10;i++) {   
+      gsrValue=analogRead(gsrPin);
+      sum += gsrValue;
+      delay(5);
+    }
+    gsrAverage = sum/10;
 
-//  gsrChar->setValue(gsrAverage);
-//  gsrChar->notify();
-//
-//
-//  //read the heart rate sensor
-//  long irValue = particleSensor.getIR();
-//
-//  if (checkForBeat(irValue) == true){
-//    //We sensed a beat!
-//    long delta = millis() - lastBeat;
-//    lastBeat = millis();
-//
-//    beatsPerMinute = 60 / (delta / 1000.0);
-//
-//    if (beatsPerMinute < 255 && beatsPerMinute > 20) {
-//      rates[rateSpot++] = (byte)beatsPerMinute; //Store this reading in the array
-//      rateSpot %= RATE_SIZE; //Wrap variable
-//
-//      //Take average of readings
-//      beatAvg = 0;
-//      for (byte x = 0 ; x < RATE_SIZE ; x++)
-//        beatAvg += rates[x];
-//      beatAvg /= RATE_SIZE;
-//    }
-//  }
+  // For debugging purposes
+//    Serial.printf("GSR: %d\n", gsrAverage);
+    gsrChar->setValue(gsrAverage);
+    gsrChar->notify();
+  }
 
-//  heartRateChar->setValue(beatsPerMinute);
-//  heartRateChar->notify();
+
+  //read the heart rate sensor
+  long irValue = particleSensor.getGreen();
+
+  if (checkForBeat(irValue) == true){
+
+//    Serial.println("found beat");
+    
+    //We sensed a beat!
+    long delta = millis() - lastBeat;
+    lastBeat = millis();
+
+    beatsPerMinute = 60 / (delta / 1000.0);
+
+    if (beatsPerMinute < 255 && beatsPerMinute > 20) {
+      rates[rateSpot++] = (byte)beatsPerMinute; //Store this reading in the array
+      rateSpot %= RATE_SIZE; //Wrap variable
+
+      //Take average of readings
+      beatAvg = 0;
+      for (byte x = 0 ; x < RATE_SIZE ; x++)
+        beatAvg += rates[x];
+      beatAvg /= RATE_SIZE;
+    }
+  }
+
+  // For debugging purposes
+  //Serial.printf("Heartbeart: %d\n", beatAvg);
+
+  // if the value is new then send it
+  if(beatAvg != previousHeartRate){
+    heartRateChar->setValue(beatAvg);
+    heartRateChar->notify();
+  }
+
+  // set the previous
+  previousHeartRate = beatAvg;
   
 
 // left in debugging data sends for testing if needed
   
-  i++;
-  thermistorChar->setValue(i);
-  thermistorChar->notify();
-  delay(10);
-  gsrChar->setValue(i);
-  gsrChar->notify();
-  delay(10);
-  heartRateChar->setValue(i);
-  heartRateChar->notify();
-  delay(10);
+//  i++  
+//  thermistorChar->setValue(i);
+//  thermistorChar->notify();
+//  delay(10);
+//  gsrChar->setValue(i);
+//  gsrChar->notify();
+//  delay(10);
+//  heartRateChar->setValue(i);
+//  heartRateChar->notify();
+//  delay(10);
 //  batteryChar->setValue(i);
 //  batteryChar->notify();
 
-  delay(2000);
+  //delay(2000);
 
 }
