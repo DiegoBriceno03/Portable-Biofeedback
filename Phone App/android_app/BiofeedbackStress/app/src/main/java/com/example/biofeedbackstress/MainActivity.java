@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ble.*;
 import com.example.utils.Utils;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -49,7 +50,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Log.d(TAG, "onCreate() called");
-
         Timber.plant(new Timber.DebugTree());
 
         setContentView(R.layout.activity_main);
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity
 
         // The action that's being filtered should be matching with what is stated within the
         // BLE_Handler class
-        //registerReceiver(esp32DataReceiver, new IntentFilter("TestMeasurement"));
         registerReceiver(heartRateDataReceiver, new IntentFilter("HeartRateMeasurement"));
         registerReceiver(temperatureDataReceiver, new IntentFilter("TemperatureMeasurement"));
         registerReceiver(gsrDataReceiver, new IntentFilter("GSRMeasurement"));
@@ -92,7 +91,6 @@ public class MainActivity extends AppCompatActivity
         unregisterReceiver(heartRateDataReceiver);
         unregisterReceiver(temperatureDataReceiver);
         unregisterReceiver(gsrDataReceiver);
-        //unregisterReceiver(esp32DataReceiver);
     }
 
     private final BroadcastReceiver heartRateDataReceiver = new BroadcastReceiver()
@@ -101,22 +99,22 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent)
         {
             HeartRate_Measurement measurement = (HeartRate_Measurement) intent.getSerializableExtra("HeartRateVal");
+            //String data = String.format(Locale.ENGLISH, "%d", measurement.pulse);
 
-            // This is for testing purposes
-//            heartRateValue.setText(String.format(Locale.ENGLISH, "%d bpm", measurement.pulse));
-
-            // This is the actual one to be used
-            heartRateValue.setText(String.format(Locale.ENGLISH, "%.2f bpm", measurement.pulse));
+            heartRateValue.setText(String.format(Locale.ENGLISH, "%d bpm", measurement.pulse));
+            //Utils.writeToFile(context, Integer.toString(measurement.pulse), HeartRate_Measurement.fileHR);
         }
     };
 
+    // Issues currently exist for the temperature. Should be printing out as a float. Figure out
+    // why it is not working
     private final BroadcastReceiver temperatureDataReceiver = new BroadcastReceiver()
     {
         @Override
         public void onReceive(Context context, Intent intent)
         {
             Temperature_Measurement measurement = (Temperature_Measurement) intent.getSerializableExtra("TempVal");
-            temperatureValue.setText(String.format(Locale.ENGLISH, "%.2f F", measurement.temperature));
+            temperatureValue.setText(String.format(Locale.ENGLISH, "%s F", measurement.temperature));
         }
     };
 
@@ -129,19 +127,6 @@ public class MainActivity extends AppCompatActivity
             gsrValue.setText(String.format(Locale.ENGLISH, "%d", measurement.conduct));
         }
     };
-
-//    private final BroadcastReceiver esp32DataReceiver = new BroadcastReceiver()
-//    {
-//        // What to do with received data
-//        @Override
-//        public void onReceive(Context context, Intent intent)
-//        {
-//            TestMeasurement measurement = (TestMeasurement) intent.getSerializableExtra("TestVal");
-////            DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH);
-////            String formattedTimestamp = df.format(measurement.timestamp);
-//            measurementValue.setText(String.format(Locale.ENGLISH, "%d", measurement.count));
-//        }
-//    };
 
     // Activity will cause app to ask User for permission to allow Bluetooth access
     private boolean hasPermissions()

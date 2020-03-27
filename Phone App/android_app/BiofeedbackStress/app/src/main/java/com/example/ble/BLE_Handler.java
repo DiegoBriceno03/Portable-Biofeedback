@@ -41,10 +41,6 @@ public class BLE_Handler
      private static final UUID TEMPERATURE_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("00002A1C-0000-1000-8000-00805f9b34fb");
      private static final UUID GSR_MEASUREMENT_CHARACTERISTIC_UUID = UUID.fromString("0d823996-e5a7-4ce3-9ae3-6649d46d8f85");
 
-    // Currently being used for testing purposes
-    //private static final UUID TVS_SERVICE_UUID = UUID.fromString("63228c99-ee20-4dcf-a90a-711948af59e0");
-    //private static final UUID TEST_VALUE_CHARACTERISTIC_UUID = UUID.fromString("dda9a9d0-2de0-4da8-84eb-2c9d15d6407c");
-
     private static final String MY_ESP32 = "Group 11 BLE";
 
     private BluetoothCentral bleCentral;
@@ -66,12 +62,6 @@ public class BLE_Handler
             // Request new connection priority
             peripheral.requestConnectionPriority(CONNECTION_PRIORITY_HIGH);
 
-            // Turn on notification for TVS Service
-//            if (peripheral.getService(TVS_SERVICE_UUID) != null)
-//            {
-//                peripheral.setNotify(peripheral.getCharacteristic(TVS_SERVICE_UUID, TEST_VALUE_CHARACTERISTIC_UUID), true);
-//            }
-//
             // Hopefully this fucking work
             if (peripheral.getService(SDS_SERVICE_UUID) != null)
             {
@@ -82,12 +72,6 @@ public class BLE_Handler
                     peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, GSR_MEASUREMENT_CHARACTERISTIC_UUID), true);
                 }
             }
-
-            // Turn on notifications for SDS Service
-//            if (peripheral.getService(SDS_SERVICE_UUID) != null)
-//            {
-//                peripheral.setNotify(peripheral.getCharacteristic(SDS_SERVICE_UUID, BATTERY_LEVEL_CHARACTERISTIC_UUID),true);
-//            }
         }
 
         // Callback invoked when the notification state of a characteristic has changed
@@ -159,20 +143,6 @@ public class BLE_Handler
                 context.sendBroadcast(intent);
                 Timber.d("%s", measurement);
             }
-
-            // Hopefully this will work
-//            if (characteristicUUID.equals(TEST_VALUE_CHARACTERISTIC_UUID))
-//            {
-//                TestMeasurement measurement = new TestMeasurement(value);
-//
-//                // This intent MUST match the action within the IntentFilter in MainActivity class,
-//                // within the onReceive() function call of the BroadcastReceiver object
-//                Intent intent = new Intent("TestMeasurement");
-//                intent.putExtra("TestVal", measurement);
-//
-//                context.sendBroadcast(intent);
-//                Timber.d("%s", measurement);
-//            }
         }
     };
 

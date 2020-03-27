@@ -6,12 +6,11 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import static com.welie.blessed.BluetoothBytesParser.FORMAT_SINT32;
-import static com.welie.blessed.BluetoothBytesParser.FORMAT_FLOAT;
 
 public class GSR_Measurement implements Serializable
 {
-    // Based on the ESP32 firmware that was developed for this project,
-    // no testing variables will be necessary for this
+    // Name of file to save received heart rate data
+    public static final String gsrFile = "gsr.json";
 
     public int conduct;
 

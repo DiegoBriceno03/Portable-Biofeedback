@@ -19,7 +19,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.200"
-        app:layout_constraintHorizontal_bias="0.7" />
+        app:layout_constraintHorizontal_bias="0.8" />
 
     <!-- Associated with the Temperature -->
     <TextView
@@ -34,7 +34,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.300"
-        app:layout_constraintHorizontal_bias="0.8" />
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <!-- Associated with the GSR -->
     <TextView

@@ -13,5 +13,5 @@
     <string name="battLevel">Battery Level: </string>
     <string name="gsr">GSR: </string>
     <string name="heartRate">Heart Rate: </string>
-    <string name="tempMeasurement">Temperature: </string>
+    <string name="tempMeasurement">Temp: </string>
 </resources>

@@ -7,14 +7,20 @@ android {
         applicationId "com.example.biofeedbackstress"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def appName = "BiofeedbackStress"
+                    outputFileName = appName+"_${variant.buildType.name}_${defaultConfig.versionName}.apk"
+                }
+            }
         }
     }
 }
