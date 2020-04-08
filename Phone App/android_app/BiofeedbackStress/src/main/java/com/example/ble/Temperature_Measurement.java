@@ -7,8 +7,9 @@ import java.util.Locale;
 
 public class Temperature_Measurement implements Serializable
 {
-    // Name of file to save received heart rate data
+    // Name of files to save received temperature data
     public static final String tempFile = "temperature.json";
+    public static final String calibrateTempFile = "temperature_calibrate.json";
 
     public String temperature;
 

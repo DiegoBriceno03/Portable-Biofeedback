@@ -9,8 +9,9 @@ import static com.welie.blessed.BluetoothBytesParser.FORMAT_SINT32;
 
 public class GSR_Measurement implements Serializable
 {
-    // Name of file to save received heart rate data
+    // Name of files to save received GSR data
     public static final String gsrFile = "gsr.json";
+    public static final String calibrateGSRFile = "gsr_calibrate.json";
 
     public int conduct;
 

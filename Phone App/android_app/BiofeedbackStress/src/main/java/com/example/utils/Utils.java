@@ -2,6 +2,7 @@ package com.example.utils;
 
 import android.content.Context;
 import android.view.Gravity;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -9,6 +10,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import timber.log.Timber;
 
@@ -20,35 +24,11 @@ public class Utils
     public final static int ACCESS_LOCATION_REQUEST = 2;
     public final static int BLE_SERVICES = 3;
 
-    public static void writeToFile(Context context, String data, String fileName)
+    public static void setDate(TextView text)
     {
-        File file = new File(context.getFilesDir(), fileName);
-        FileWriter fw = null;
-        BufferedWriter bw = null;
+        String date =  new SimpleDateFormat("MM dd yyyy", Locale.ENGLISH).format(new Date());
 
-        String write;
-
-        if (!file.exists())
-        {
-            try
-            {
-                file.createNewFile();
-            } catch (IOException e)
-            {
-                Timber.e(e);
-            }
-        }
-
-        try
-        {
-            fw = new FileWriter(file.getAbsoluteFile());
-            bw = new BufferedWriter(fw);
-
-            bw.write(String.format("{%s}", data));
-        } catch (IOException e)
-        {
-            Timber.e(e);
-        }
+        text.setText(date);
     }
 
     // A 'toast' is a view containing quick little messages for the user. This
