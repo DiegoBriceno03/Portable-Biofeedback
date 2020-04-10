@@ -32,10 +32,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 
 import org.json.JSONArray;
@@ -48,6 +48,8 @@ import static com.example.utils.Utils.ACCESS_LOCATION_REQUEST;
 
 public class MainActivity extends AppCompatActivity
 {
+    private static final int RESET_SENSITIVITY = 10;
+
     private final String TAG = MainActivity.class.getSimpleName();
     private final String pathCalibrationData = "/calibrationData";
 
@@ -69,6 +71,14 @@ public class MainActivity extends AppCompatActivity
     private File jsonCalibrateGSRFile;
 
     private File jsonCalibration;
+
+    // Form part of the "strike" system
+    private static int heartStrikes = 0;
+    private static int heartStrikeCounter = 0;
+    private static int temperatureStrikes = 0;
+    private static int temperatureStrikeCounter = 0;
+    private static int gsrStrikes = 0;
+    private static int gsrStrikeCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -198,7 +208,24 @@ public class MainActivity extends AppCompatActivity
                     int high = arr.getInt(1);
 
                     if ((measurement.pulse < low) || (measurement.pulse > high))
-                        warnUser();
+                    {
+                        heartStrikes++;
+
+                        if (heartStrikes > 3)
+                        {
+                            heartStrikes = 0;
+                            warnUser("Heart Rate");
+                        }
+
+                        if (heartStrikeCounter >= RESET_SENSITIVITY)
+                        {
+                            heartStrikeCounter = 0;
+                            heartStrikes = 0;
+                        }
+
+                        if (heartStrikes < 3)
+                            heartStrikeCounter++;
+                    }
                 } catch (JSONException e)
                 {
                     Timber.e(e);
@@ -242,7 +269,24 @@ public class MainActivity extends AppCompatActivity
                     double temp = Double.parseDouble(measurement.temperature);
 
                     if ((temp < low) || (temp > high))
-                        warnUser();
+                    {
+                        temperatureStrikes++;
+
+                        if (temperatureStrikes > 3)
+                        {
+                            temperatureStrikes = 0;
+                            warnUser("Temperature");
+                        }
+
+                        if (temperatureStrikeCounter >= RESET_SENSITIVITY)
+                        {
+                            temperatureStrikeCounter = 0;
+                            temperatureStrikes = 0;
+                        }
+
+                        if (temperatureStrikes < 3)
+                            temperatureStrikeCounter++;
+                    }
                 } catch (JSONException e)
                 {
                     Timber.e(e);
@@ -285,7 +329,24 @@ public class MainActivity extends AppCompatActivity
                     int high = arr.getInt(1);
 
                     if ((measurement.conduct < low) || (measurement.conduct > high))
-                        warnUser();
+                    {
+                        gsrStrikes++;
+
+                        if (gsrStrikes > 3)
+                        {
+                            gsrStrikes = 0;
+                            warnUser("Conductance");
+                        }
+
+                        if (gsrStrikeCounter >= RESET_SENSITIVITY)
+                        {
+                            gsrStrikeCounter = 0;
+                            gsrStrikes = 0;
+                        }
+
+                        if (gsrStrikes < 3)
+                            gsrStrikeCounter++;
+                    }
                 } catch (JSONException e)
                 {
                     Timber.e(e);
@@ -316,9 +377,6 @@ public class MainActivity extends AppCompatActivity
                             intent = new Intent(getApplicationContext(), NotificationsActivity.class);
                             startActivity(intent);
                             return true;
-                        // Flesh this case out once everything else is done. This is kinda low priority
-                        case R.id.nav_settings:
-                            break;
                         default:
                             break;
                     }
@@ -334,6 +392,13 @@ public class MainActivity extends AppCompatActivity
         {
             calibrate = !calibrate;
             compare = !compare;
+
+            heartStrikes = 0;
+            heartStrikeCounter = 0;
+            temperatureStrikes = 0;
+            temperatureStrikeCounter = 0;
+            gsrStrikes = 0;
+            gsrStrikeCounter = 0;
 
             // Begins calibration
             if (calibrate)
@@ -529,28 +594,36 @@ public class MainActivity extends AppCompatActivity
     }
 
     // Probably notify the user what exactly is raising the alert?
-    private void warnUser()
+    private void warnUser(String src)
     {
+        // Creating the timestamp
+        SimpleDateFormat dateForm = new SimpleDateFormat("h:mm.s a", Locale.ENGLISH);
+        String formattedDate = dateForm.format(new Date());
+
+        // Creating timestamped message to pass along in the intent
+        String warning = String.format(Locale.ENGLISH, "%s\t Be mindful of your %s!", formattedDate, src);
+
         // Creating the intent that will alert the user
-        Intent warnIntent = new Intent(this, NotificationsActivity.class);
+        Intent warnIntent = new Intent(getApplicationContext(), NotificationsActivity.class);
+        warnIntent.putExtra("WARN", warning);
         //warnIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent contentWarnIntent = PendingIntent.getActivity(this, 0, warnIntent, 0);
+        PendingIntent contentWarnIntent = PendingIntent.getActivity(getApplicationContext(), 0, warnIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // Build the notification
         NotificationCompat.Builder warn = new NotificationCompat.Builder(this, "StressAlert")
                 .setSmallIcon(R.drawable.icon_warning)
                 .setContentTitle("Stress Detected")
-                .setContentText("Detected that you may be under stress")
+                .setContentText(src + " seems to be off")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(contentWarnIntent)
                 .setAutoCancel(true);
 
         // Adding the notification
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
         notificationManager.notify(0, warn.build());
     }
 
-    // This is for Android 8 and above
+    // This is necessary for Android 8 and above
     private void createNotificationChannel()
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)

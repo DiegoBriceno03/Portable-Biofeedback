@@ -7,8 +7,8 @@ android {
         applicationId "com.example.biofeedbackstress"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 8
-        versionName "1.8"
+        versionCode 9
+        versionName "1.81"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
