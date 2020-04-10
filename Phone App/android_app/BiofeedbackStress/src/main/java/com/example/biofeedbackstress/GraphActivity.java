@@ -39,7 +39,7 @@ public class GraphActivity extends AppCompatActivity
                     switch (item.getItemId())
                     {
                         case R.id.nav_dashboard:
-                            intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent = new Intent(getApplicationContext(), DashboardActivity.class);
                             startActivity(intent);
                             return true;
                         case R.id.nav_notifications:

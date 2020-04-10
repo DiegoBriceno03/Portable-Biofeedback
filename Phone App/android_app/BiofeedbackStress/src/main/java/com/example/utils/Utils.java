@@ -26,7 +26,7 @@ public class Utils
 
     public static void setDate(TextView text)
     {
-        String date =  new SimpleDateFormat("MM dd yyyy", Locale.ENGLISH).format(new Date());
+        String date =  new SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH).format(new Date());
 
         text.setText(date);
     }
@@ -42,5 +42,13 @@ public class Utils
         Toast toast = Toast.makeText(context, string, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER | Gravity.BOTTOM, 0, 0);
         toast.show();
+    }
+
+    public static void saveData(String data, File jsonFileName) throws IOException
+    {
+        FileWriter writer = new FileWriter(jsonFileName, true);
+
+        writer.write(data);
+        writer.close();
     }
 }

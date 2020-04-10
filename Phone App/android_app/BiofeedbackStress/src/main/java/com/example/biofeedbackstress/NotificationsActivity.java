@@ -13,13 +13,16 @@ import android.widget.TextView;
 import com.example.utils.Utils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import timber.log.Timber;
 
 public class NotificationsActivity extends AppCompatActivity
 {
-    private static ArrayList<String> listNotify = new ArrayList<>();
+    private ArrayList<String> listNotify = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,12 +37,7 @@ public class NotificationsActivity extends AppCompatActivity
         bottomNavBar.getMenu().findItem(R.id.nav_notifications).setChecked(true);
         bottomNavBar.setOnNavigationItemSelectedListener(navListener);
 
-        Intent mainIntent = getIntent();
-
-        String obtainMainIntent = (String) mainIntent.getSerializableExtra("WARN");
-
-        if (obtainMainIntent != null)
-            listNotify.add(obtainMainIntent);
+        readAlerts();
 
         if (!listNotify.isEmpty())
         {
@@ -61,7 +59,7 @@ public class NotificationsActivity extends AppCompatActivity
                     switch (item.getItemId())
                     {
                         case R.id.nav_dashboard:
-                            intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent = new Intent(getApplicationContext(), DashboardActivity.class);
                             startActivity(intent);
                             return true;
                         case R.id.nav_graph:
@@ -75,4 +73,30 @@ public class NotificationsActivity extends AppCompatActivity
                     return false;
                 }
             };
+
+    private void readAlerts()
+    {
+        BufferedReader buffRead;
+        FileReader fileRead;
+        ArrayList<String> tmp = new ArrayList<>();
+
+        try
+        {
+            fileRead = new FileReader(DashboardActivity.alerts);
+            buffRead = new BufferedReader(fileRead);
+            String line = buffRead.readLine();
+
+            while (line != null)
+            {
+                tmp.add(line);
+                line = buffRead.readLine();
+            }
+        } catch (IOException e)
+        {
+            Timber.e(e);
+        }
+
+        for (int i = tmp.size() - 1; i >= 0; i--)
+            listNotify.add(tmp.get(i));
+    }
 }
