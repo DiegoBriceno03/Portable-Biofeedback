@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Biofeedback Stress Management</string>
-    <string name="measurementTextView">Waiting for value...</string>
-    <string name="battLevel">Battery Level: </string>
-    <string name="gsr">Galvanic Skin Resistance: </string>
-    <string name="heartRate">Heart Rate: </string>
-    <string name="tempMeasurement">Temperature: </string>
-</resources>
